@@ -1,0 +1,14 @@
+.design-fond {
+  width: 100%;
+  display: flex;
+}
+.create-design {
+  width: 50%;
+  height: 100%;
+  background-color: #a488f5;
+}
+.play-design {
+  width: 50%;
+  height: 100%;
+  background-color: #c4ed6d;
+}

@@ -1,0 +1,18 @@
+.design-fond {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  border: 1px solid rgb(61, 61, 61);
+}
+.create-design {
+  width: 50%;
+  height: 100%;
+  background-color: #a488f5;
+  opacity: 0.5;
+}
+.play-design {
+  width: 50%;
+  height: 100%;
+  background-color: #c4ed6d;
+  opacity: 0.5;
+}

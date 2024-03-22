@@ -1,0 +1,32 @@
+.button-play {
+  background-color: #c4ed6d;
+  border: 0px;
+  color: none;
+}
+.button-create {
+  background-color: #a488f5;
+  border: 0px;
+  color: none;
+}
+.design-fond {
+  width: 100%;
+  display: flex;
+}
+.create-design {
+  width: 50%;
+  height: 690px;
+  background-color: #a488f5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.play-design {
+  width: 50%;
+  height: 690px;
+  background-color: #c4ed6d;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
