@@ -1,12 +1,10 @@
-.button-play {
-  background-color: #c4ed6d;
-  border: 0px;
-  color: none;
+#play:hover {
+  cursor: pointer;
+  background-image: url(/assets/play_btn_hover.png);
 }
-.button-create {
-  background-color: #a488f5;
-  border: 0px;
-  color: none;
+#create:hover {
+  cursor: pointer;
+  background-image: url(/assets/create_btn_hover.png);
 }
 .design-fond {
   width: 100%;
