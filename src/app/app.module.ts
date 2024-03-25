@@ -13,6 +13,10 @@ import { PageStatsComponent } from './pages/page-stats/page-stats.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardThemeComponent } from './components/card-theme/card-theme.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { FormCreateCategorieComponent } from './components/form-create-categorie/form-create-categorie.component';
+import { PageCreateCategorieComponent } from './pages/page-create-categorie/page-create-categorie.component';
+import { PageGameComponent } from './pages/page-game/page-game.component';
+import { PageResultsComponent } from './pages/page-results/page-results.component';
 import { IconeComponent } from './components/icone/icone.component';
 
 @NgModule({
@@ -25,8 +29,11 @@ import { IconeComponent } from './components/icone/icone.component';
     PageStatsComponent,
     FooterComponent,
     CardThemeComponent,
-
     PageNotFoundComponent,
+    FormCreateCategorieComponent,
+    PageCreateCategorieComponent,
+    PageGameComponent,
+    PageResultsComponent,
      IconeComponent,
   ],
   imports: [

@@ -1,0 +1,28 @@
+
+form {
+    text-align: center;
+}
+
+
+.form-label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    }
+
+.form-control{
+    background-color: gainsboro;
+    width: 400px;
+    border-radius: 7px;    
+}
+
+.button-validerCategorie {
+    background-color: #c4ed6d;
+    width: 180px;
+    padding:5px;
+    border-radius: 7px;
+}
+
+.inputCenter {
+    display: flex;
+    justify-content: center;
+}
