@@ -3,10 +3,9 @@ form {
     text-align: center;
 }
 
-
 .form-label {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 60px;
+    font-family: 'irish';
+    font-size: 50px;
     }
 
 .form-control{

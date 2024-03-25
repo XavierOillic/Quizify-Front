@@ -16,7 +16,7 @@ export class FormCreateCategorieComponent implements OnInit {
 
   initCategorie() {
     this.formCategorie = new FormGroup({
-      categorie: new FormControl(this.formCategorie, Validators.required),
+      libelle: new FormControl(this.formCategorie, Validators.required),
     })
   }
 
