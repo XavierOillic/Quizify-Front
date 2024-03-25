@@ -7,7 +7,7 @@ import { Categorie } from '../models/categorie';
   providedIn: 'root'
 })
 export class CategoriesService {
-
+  //chemin de l'information
   constructor(private http: HttpClient) {}
 
   createNewCategorie(categorieToCreate: Categorie): Observable<Categorie> {
