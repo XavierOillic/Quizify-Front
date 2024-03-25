@@ -3,3 +3,8 @@
   font-family: "irish";
   src: url("./assets/fonts/IrishGrover-Regular.ttf");
 }
+
+html,
+body {
+  height: 100%;
+}

@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'quiz/5', component: PageGameComponent },
   { path: 'quiz/5/results', component: PageResultsComponent },
   { path: '', component: PageStatsComponent },
+  { path: 'stats', component: PageStatsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -22,4 +23,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
