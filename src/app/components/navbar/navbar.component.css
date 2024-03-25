@@ -30,6 +30,7 @@
 
   display: flex;
   align-items: center;
+  justify-content: space-around;
 
   cursor: pointer;
 
@@ -38,4 +39,9 @@
 
   color: rgb(66, 66, 66);
   font-style: italic;
+}
+.design-menu {
+  display: flex;
+  align-items: center;
+  float: right;
 }
