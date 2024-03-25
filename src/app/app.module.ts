@@ -13,6 +13,8 @@ import { PageStatsComponent } from './pages/page-stats/page-stats.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardThemeComponent } from './components/card-theme/card-theme.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PageGameComponent } from './pages/page-game/page-game.component';
+import { PageResultsComponent } from './pages/page-results/page-results.component';
 import { IconeComponent } from './components/icone/icone.component';
 
 @NgModule({
@@ -27,6 +29,8 @@ import { IconeComponent } from './components/icone/icone.component';
     CardThemeComponent,
 
     PageNotFoundComponent,
+    PageGameComponent,
+    PageResultsComponent,
      IconeComponent,
   ],
   imports: [
