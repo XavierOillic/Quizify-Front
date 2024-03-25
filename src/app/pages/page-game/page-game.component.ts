@@ -7,6 +7,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./page-game.component.css'],
 })
 export class PageGameComponent implements OnInit {
+  theme: string = 'Culture G';
+
   constructor(private activeRoute: ActivatedRoute) {}
 
   ngOnInit(): void {

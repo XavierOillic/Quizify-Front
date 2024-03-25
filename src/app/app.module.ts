@@ -15,6 +15,7 @@ import { CardThemeComponent } from './components/card-theme/card-theme.component
 import { CardIconeComponent } from './components/card-icone/card-icone.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PageGameComponent } from './pages/page-game/page-game.component';
+import { PageResultsComponent } from './pages/page-results/page-results.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PageGameComponent } from './pages/page-game/page-game.component';
     CardIconeComponent,
     PageNotFoundComponent,
     PageGameComponent,
+    PageResultsComponent,
   ],
   imports: [
     BrowserModule,
