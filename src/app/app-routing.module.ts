@@ -6,13 +6,18 @@ import { PageCreationComponent } from './pages/page-creation/page-creation.compo
 import { PageQuizComponent } from './pages/page-quiz/page-quiz.component';
 import { PageStatsComponent } from './pages/page-stats/page-stats.component';
 import { PageCreateCategorieComponent } from './pages/page-create-categorie/page-create-categorie.component';
+import { PageGameComponent } from './pages/page-game/page-game.component';
+import { PageResultsComponent } from './pages/page-results/page-results.component';
 
 const routes: Routes = [
   { path: '', component: PageHomeComponent },
   { path: '', component: PageCreationComponent },
   { path: 'createCategorie', component: PageCreateCategorieComponent},
-  { path: '', component: PageQuizComponent },
+  { path: 'quiz', component: PageQuizComponent },
+  { path: 'quiz/5', component: PageGameComponent },
+  { path: 'quiz/5/results', component: PageResultsComponent },
   { path: '', component: PageStatsComponent },
+  { path: 'stats', component: PageStatsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -20,4 +25,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
