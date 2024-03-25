@@ -9,7 +9,7 @@ import { PageStatsComponent } from './pages/page-stats/page-stats.component';
 const routes: Routes = [
   { path: '', component: PageHomeComponent },
   { path: '', component: PageCreationComponent },
-  { path: '', component: PageQuizComponent },
+  { path: 'quiz', component: PageQuizComponent },
   { path: '', component: PageStatsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
