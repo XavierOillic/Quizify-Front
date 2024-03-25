@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: PageHomeComponent },
   { path: '', component: PageCreationComponent },
   { path: '', component: PageQuizComponent },
-  { path: '', component: PageStatsComponent },
+  { path: 'stats', component: PageStatsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
