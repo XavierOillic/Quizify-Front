@@ -12,8 +12,8 @@ import { PageQuizComponent } from './pages/page-quiz/page-quiz.component';
 import { PageStatsComponent } from './pages/page-stats/page-stats.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardThemeComponent } from './components/card-theme/card-theme.component';
-import { CardIconeComponent } from './components/card-icone/card-icone.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { IconeComponent } from './components/icone/icone.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,9 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     PageStatsComponent,
     FooterComponent,
     CardThemeComponent,
-    CardIconeComponent,
+
     PageNotFoundComponent,
+     IconeComponent,
   ],
   imports: [
     BrowserModule,

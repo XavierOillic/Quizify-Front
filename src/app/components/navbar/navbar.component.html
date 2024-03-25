@@ -1,22 +1,84 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Espace Création</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Espace Jeu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Statistiques...</a>
-                </li>
-            </ul>
-        </div>
+<div class="design-fond">
+  <div class="create-design">
+    <div>
+      <img
+        class="logo"
+        [routerLink]="['']"
+        routerLinkActive=""
+        src="/assets/quizify_logo.png"
+        height="60em"
+        width="auto"
+      />
     </div>
-</nav>
+    <div class="esp-crea" routerLink="**" routerLinkActive="">
+      <p>
+        <app-icone
+          [iconName]="'pencil'"
+          [iconSize]="1"
+          [iconColor]="'grey'"
+        ></app-icone>
+        Création
+      </p>
+    </div>
+    <div class="esp-jeu" routerLink="**" routerLinkActive="">
+      <p>
+        <app-icone
+          [iconName]="'playstation'"
+          [iconSize]="1"
+          [iconColor]="'grey'"
+        ></app-icone>
+        Espace Joueur
+      </p>
+    </div>
+    <div class="esp-stat" routerLink="**" routerLinkActive="">
+      <p>
+        <app-icone
+          [iconName]="'percent'"
+          [iconSize]="1"
+          [iconColor]="'grey'"
+        ></app-icone>
+        Statistiques ...
+      </p>
+    </div>
+  </div>
+  <div class="play-design">
+    <div class="verte">
+      <ul class="nav nav-tabs design-menu">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-expanded="false"
+          >
+            <app-icone
+              [iconName]="'list'"
+              [iconSize]="2.5"
+              [iconColor]="'grey'"
+            ></app-icone
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="**" routerLinkActive=""
+                >Espace Création</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" routerLink="**" routerLinkActive=""
+                >Espace Joueur</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" routerLink="**" routerLinkActive=""
+                >Statistique</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
