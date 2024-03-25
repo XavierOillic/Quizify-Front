@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CardThemeComponent } from './components/card-theme/card-theme.component';
 import { CardIconeComponent } from './components/card-icone/card-icone.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PageGameComponent } from './pages/page-game/page-game.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     CardThemeComponent,
     CardIconeComponent,
     PageNotFoundComponent,
+    PageGameComponent,
   ],
   imports: [
     BrowserModule,
