@@ -11,12 +11,11 @@ import { PageResultsComponent } from './pages/page-results/page-results.componen
 
 const routes: Routes = [
   { path: '', component: PageHomeComponent },
-  { path: '', component: PageCreationComponent },
+  { path: 'test', component: PageCreationComponent },
   { path: 'createCategorie', component: PageCreateCategorieComponent},
   { path: 'quiz', component: PageQuizComponent },
   { path: 'quiz/5', component: PageGameComponent },
   { path: 'quiz/5/results', component: PageResultsComponent },
-  { path: '', component: PageStatsComponent },
   { path: 'stats', component: PageStatsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
@@ -25,4 +24,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,14 @@
+.card-design {
+  height: 15em;
+  width: 11rem;
+
+  background-color: #c4ed6d;
+
+  border-radius: 10%;
+  border: 1px solid grey;
+  box-shadow: 5px 5px 2px grey;
+
+  justify-content: space-around;
+
+  text-align: center;
+}

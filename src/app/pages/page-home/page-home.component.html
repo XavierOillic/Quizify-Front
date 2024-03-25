@@ -15,14 +15,23 @@
   <div class="child1">
     <div class="create-design">
       <div>
-        <div class="button-create" routerLink="**">
+        <div
+          class="button-create"
+          [routerLink]="['test']"
+          routerLinkActive="active"
+        >
           <a><img id="play" src="assets/create_btn.png" /></a>
         </div>
       </div>
     </div>
     <div class="play-design">
       <div>
-        <div id="create" class="button-play" routerLink="**">
+        <div
+          id="create"
+          class="button-play"
+          routerLink="**"
+          routerLinkActive="active"
+        >
           <a><img src="assets/play_btn.png" /></a>
         </div>
       </div>
