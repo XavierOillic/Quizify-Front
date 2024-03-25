@@ -8,4 +8,6 @@ import { Categorie } from 'src/app/models/categorie';
 })
 export class CardThemeComponent {
   @Input() categorie!: Categorie;
+
+  @Input() cardColor: String = '';
 }

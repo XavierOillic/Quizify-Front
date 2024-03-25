@@ -8,7 +8,7 @@ import { PageStatsComponent } from './pages/page-stats/page-stats.component';
 
 const routes: Routes = [
   { path: '', component: PageHomeComponent },
-  { path: '', component: PageCreationComponent },
+  { path: 'test', component: PageCreationComponent },
   { path: '', component: PageQuizComponent },
   { path: 'stats', component: PageStatsComponent },
   { path: '**', component: PageNotFoundComponent },
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
