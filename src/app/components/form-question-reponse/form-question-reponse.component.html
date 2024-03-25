@@ -1,1 +1,29 @@
-<p>form-question-reponse works!</p>
+
+<form>
+    <div class="mb-3">
+    <h1>Je crée la question pour le thème:</h1>
+    <h2>ici nom categorie en dynamique</h2>
+    <p>Je saisie ma question, les choix de réponses et j’indique quelle réponse est correcte</p>
+        <label for="input-question" class="form-label">Question</label> <!--mettre le n° de q° en dynamique-->
+            <div class="inputQuestion">
+                <input type="text" formControlName="question" id="input-question" class="form-control" />
+            </div>
+        <label for="input-reponse1" class="form-label">Reponse 1</label>
+            <div class="inputReponse1">
+                <input type="text" formControlName="reponse1" id="input-reponse1" class="form-control" />
+            </div>
+        <label for="input-reponse2" class="form-label">Reponse 2</label>
+            <div class="inputReponse2">
+                <input type="text" formControlName="reponse2" id="input-reponse2" class="form-control" />
+            </div>
+        <label for="input-reponse3" class="form-label">Reponse 3</label>
+            <div class="inputReponse3">
+                <input type="text" formControlName="reponse3" id="input-reponse3" class="form-control" />
+            </div>
+        <label for="input-reponse4" class="form-label">Reponse 4</label>
+            <div class="inputReponse4">
+                <input type="text" formControlName="reponse4" id="input-reponse4" class="form-control" />
+            </div>
+    </div>
+    <!--METTRE LE BOUTON VALIDER-->
+</form>
