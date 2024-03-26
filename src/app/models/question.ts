@@ -2,6 +2,6 @@ import { Categorie } from './categorie';
 
 export interface Question {
   id: number;
-  libelle: string;
+  libelleQuestion: string;
   categorie: Categorie;
 }

@@ -4,25 +4,24 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-form-create-categorie',
   templateUrl: './form-create-categorie.component.html',
-  styleUrls: ['./form-create-categorie.component.css']
+  styleUrls: ['./form-create-categorie.component.css'],
 })
 export class FormCreateCategorieComponent implements OnInit {
   formCategorie!: FormGroup;
   @Output() submitFormCategorie = new EventEmitter(); //TYPER?
 
   ngOnInit(): void {
-   this.initCategorie();
+    this.initCategorie();
   }
 
   initCategorie() {
     this.formCategorie = new FormGroup({
-      categorie: new FormControl(this.formCategorie, Validators.required),
-    })
+      libelle: new FormControl(this.formCategorie, Validators.required),
+    });
   }
 
-  onSubmitFormCategorie(){
+  onSubmitFormCategorie() {
     this.submitFormCategorie.emit(this.formCategorie.value);
     console.log('catégorie ajoutée', this.formCategorie.value);
   }
-
 }
