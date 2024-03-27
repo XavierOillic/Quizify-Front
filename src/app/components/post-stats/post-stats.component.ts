@@ -8,7 +8,7 @@ import { Stats } from 'src/app/models/stats';
   styleUrls: ['./post-stats.component.css']
 })
 export class PostStatsComponent {
-  @Input() statRecupere!: Stats;
-  @Input() createRecupere!: Creation;
+  @Input() stats!: Stats;
+  @Input() creation!: Creation;
 
 }

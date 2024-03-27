@@ -1,7 +1,9 @@
 import { Categorie } from './categorie';
+import { Reponse } from './reponse';
 
 export interface Question {
   id: number;
-  libelle: string;
+  libelleQuestion: string;
   categorie: Categorie;
+  reponse: Reponse[];
 }
