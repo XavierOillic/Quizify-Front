@@ -19,6 +19,11 @@
   justify-content: center;
   align-items: center;
 }
+.card-unique {
+  font-style: italic;
+  font-weight: lighter;
+  font-family: "irish";
+}
 
 @media (min-width: 1200px) {
   .one-plant {

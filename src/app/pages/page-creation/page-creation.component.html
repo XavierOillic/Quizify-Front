@@ -17,8 +17,14 @@
 
     <div class="design-row">
       <app-card-theme
+        class="card-unique"
+        [routerLink]="['/createCategorie']"
+        routerLinkActive="active"
+      ></app-card-theme>
+      <app-card-theme
         *ngFor="let c of categoryToDisplay"
         [category]="c"
+        routerLink="/affichageCategorieQuestion//{{ c.id }}"
       ></app-card-theme>
     </div>
   </div>
