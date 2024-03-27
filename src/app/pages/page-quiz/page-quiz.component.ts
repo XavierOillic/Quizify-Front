@@ -14,7 +14,7 @@ export class PageQuizComponent implements OnInit {
   constructor(private categoryService: CategoriesService) {}
 
   ngOnInit(): void {
-    this.categoryService.getCategorie().subscribe((data) => {
+    this.categoryService.getAllCat().subscribe((data) => {
       this.categoriesToDisplay = [...data];
     });
   }
