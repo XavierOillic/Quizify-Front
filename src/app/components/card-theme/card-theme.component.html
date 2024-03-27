@@ -1,23 +1,13 @@
 <a>
-  <div class="card-body">
-    <div class="card-design" routerLink="/createQuestion/">
-      <div>
-        <app-icone
-          [iconName]="'hourglass-split'"
-          [iconColor]="'grey'"
-          [iconSize]="2"
-        ></app-icone>
-      </div>
-      <div>
-        <h4>Histoire <br />Geographie</h4>
-      </div>
-      <div>
-        <app-icone
-          [iconName]="'globe-europe-africa'"
-          [iconColor]="'grey'"
-          [iconSize]="2"
-        ></app-icone>
-      </div>
+  <div class="card-body" [routerLink]="['createQuestion']">
+    <div class="card-design">
+      <app-icone
+        class="icone"
+        [iconName]="'balloon-heart'"
+        [iconColor]="'grey'"
+        [iconSize]="2.5"
+      ></app-icone>
+      <h4 [title]="category.libelle">{{ category.libelle }}</h4>
     </div>
   </div>
 </a>

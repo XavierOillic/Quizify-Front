@@ -13,6 +13,8 @@ export class IconeComponent {
     | 'percent'
     | 'globe-europe-africa'
     | 'hourglass-split'
+    | 'pencil-square'
+    | 'balloon-heart'
     | 'pencil' = 'pencil';
 
   @Input() iconSize: number = 2;

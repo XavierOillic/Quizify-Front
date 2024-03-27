@@ -8,4 +8,9 @@ import { Categorie } from 'src/app/models/categorie';
 })
 export class PageHomeComponent {
   @Input() categorie!: Categorie;
+
+  isDivDisplayed = false;
+  displayDiv() {
+    this.isDivDisplayed = !this.isDivDisplayed; // faire apparaitre et disparaitre la div noire sous le bandeau de nav
+  }
 }
