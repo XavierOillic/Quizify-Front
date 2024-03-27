@@ -7,7 +7,7 @@ import { Categorie } from 'src/app/models/categorie';
   styleUrls: ['./card-theme.component.css'],
 })
 export class CardThemeComponent {
-  @Input() categorie!: Categorie;
+  @Input() categorie!: String;
 
   @Input() cardColor: String = '';
 }
