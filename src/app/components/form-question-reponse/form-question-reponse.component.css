@@ -1,0 +1,63 @@
+h1 {
+    text-align: center;
+    font-family: 'irish';
+    font-size: 50px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'irish';
+    font-size: 40px;
+}
+
+p {
+    text-align: center;
+}
+
+.button-valider-QuestionReponse{
+    background-color: #c4ed6d;
+    width: 180px;
+    padding:5px;
+    border-radius: 7px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.form-label {
+    flex: 0 0 auto;
+    margin-right: 40px;
+    /* margin-left: 40px; A AJOUTER QD J4AURAIS MIS BOUTON SELECTION */
+    /* Espacement entre le label et l'input */
+}
+
+.form-control {
+    width: 80rem;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    margin-right: 10px;
+}
+
+.input-with-radio {
+    display: flex;
+    align-items: center;
+}
+
+.input-with-radio input[type="text"] {
+    margin-right: 5px;
+}
+

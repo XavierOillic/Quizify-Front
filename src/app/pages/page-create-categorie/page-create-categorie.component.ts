@@ -10,13 +10,14 @@ import { CategoriesService } from 'src/app/services/categories.service';
 })
 export class PageCreateCategorieComponent {
   constructor(
-    private categorieService: CategoriesService // private router: Router
+    private categoriesService: CategoriesService,
+    private router: Router
   ) {}
 
   newCategorieSubmitted(categorie: Categorie) {
-    this.categorieService.createNewCategorie(categorie).subscribe((resp) => {
-      console.log('new cat createFind', resp);
-      // this.router.navigate(['/createQuestion']);a ajouter pour redirection vers création de question
-    });
+    this.categoriesService.createNewCategorie(categorie).subscribe((resp) => {
+      console.log("new cat createFind", resp);
+      this.router.navigate(['/creerQuestion', categorie.id]);//DYNAMIQUE
+    })
   }
 }

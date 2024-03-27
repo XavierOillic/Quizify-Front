@@ -1,0 +1,60 @@
+
+<form (ngSubmit)="onSubmitQuestionReponse()" [formGroup]="formQuestionReponse">
+    <fieldset>
+    <div class="mb-3">
+    <h1>Je crée la question pour le thème:</h1>
+    <h2>\\ici nom categorie en dynamique//</h2>
+    <p>Je saisie ma question, les choix de réponses et j`indique quelle réponse est correcte</p>
+    
+        <div class="input-group">
+            <label for="input-question" class="form-label">Question \n° dynamique/</label>
+            <div class="inputQuestion">
+                <input type="text" formControlName="libelleQuestion" id="input-question" class="form-control" />
+            </div>
+        </div>
+
+        <p></p>
+
+        <div class="input-group">
+            <label for="input-reponse1" class="form-label">Reponse 1</label>
+            <div class="inputReponse1">
+                <input type="text" formControlName="reponse" id="input-reponse1" class="form-control" />                
+                <input type="radio" id="rep1" name="drone" value="rep1" checked />               
+            </div>
+        </div>
+        
+        <p></p>
+
+        <div class="input-group">
+            <label for="input-reponse2" class="form-label">Reponse 2</label>
+            <div class="inputReponse2">
+                <input type="text" formControlName="reponse" id="input-reponse2" class="form-control" />
+                <input type="radio" id="rep2" name="drone" value="rep2" checked />
+            </div>
+        </div>
+
+        <p></p>
+        
+        <div class="input-group">
+            <label for="input-reponse3" class="form-label">Reponse 3</label>
+            <div class="inputReponse3">
+                <input type="text" formControlName="reponse" id="input-reponse3" class="form-control" />
+                <input type="radio" id="rep3" name="drone" value="rep3" checked />
+            </div>
+        </div>
+
+        <p></p>
+        
+        <div class="input-group">
+            <label for="input-reponse4" class="form-label">Reponse 4</label>
+            <div class="inputReponse4">
+                <input type="text" formControlName="reponse" id="input-reponse4" class="form-control" />
+                <input type="radio" id="rep4" name="drone" value="rep4" checked />
+            </div>
+        </div>
+    </div>
+    
+    <button type="submit" class="button-valider-QuestionReponse">Valider</button> 
+    <!--A AJOUTER QUAND OK [disabled]="formQuestionReponse.invalid" --> 
+    </fieldset>
+</form>
