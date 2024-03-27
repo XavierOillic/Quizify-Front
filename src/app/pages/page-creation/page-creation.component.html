@@ -16,22 +16,10 @@
     </div>
 
     <div class="design-row">
-      <app-card-theme [cardColor]="'green'"></app-card-theme>
-      <app-card-theme [cardColor]="'green'"></app-card-theme>
-      <app-card-theme [cardColor]="'green'"></app-card-theme>
-    </div>
-    <div class="design-row">
-      <app-card-theme [cardColor]="'green'"></app-card-theme>
-      <app-card-theme [cardColor]="'green'"></app-card-theme>
-      <app-card-theme [cardColor]="'green'"></app-card-theme>
+      <app-card-theme
+        *ngFor="let c of categoryToDisplay"
+        [category]="c"
+      ></app-card-theme>
     </div>
   </div>
 </div>
-<!--
-  <app-card-theme
-      [cardColor]="'green'"
-      *ngFor="let theme of categorieTheme"
-      [categorie]="theme"
-    ></app-card-theme>
-
--->

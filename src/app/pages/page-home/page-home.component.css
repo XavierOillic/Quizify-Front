@@ -26,13 +26,13 @@
 #play:hover {
   position: relative;
   z-index: 1;
-  display: none;
   cursor: pointer;
   background-image: url(/assets/play_btn_hover.png);
 }
 #play-hover {
   position: relative;
   z-index: 0;
+  display: none;
 }
 #create:hover {
   cursor: pointer;

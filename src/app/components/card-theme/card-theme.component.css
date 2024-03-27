@@ -1,5 +1,8 @@
 .card-body {
-  margin: 0.5%;
+  margin: 1%;
+}
+.icone {
+  margin: 2%;
 }
 .card-design {
   display: flex;
@@ -7,8 +10,8 @@
   align-items: center;
 
   cursor: pointer;
-  height: 13em;
-  width: 10em;
+  height: 16em;
+  width: 17em;
 
   margin: 1.5em;
 

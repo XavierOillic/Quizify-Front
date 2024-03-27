@@ -2,13 +2,12 @@
   <div class="card-body" [routerLink]="['createQuestion']">
     <div class="card-design">
       <app-icone
-        [iconName]="'globe-europe-africa'"
+        class="icone"
+        [iconName]="'balloon-heart'"
         [iconColor]="'grey'"
-        [iconSize]="1.5"
+        [iconSize]="2.5"
       ></app-icone>
-      <h4>Anatomie</h4>
-      <!--<h4 [title]="categorie.libelle">{{ categorie.libelle }}</h4>
-        {{ categorie.libelle }} -->
+      <h4 [title]="category.libelle">{{ category.libelle }}</h4>
     </div>
   </div>
 </a>

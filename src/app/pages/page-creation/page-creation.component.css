@@ -1,20 +1,20 @@
 .design-row {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* revient à la ligne quand la ligne depasse une certaine longueur*/
 }
 .container-card {
   padding-top: 1%;
 
-  display: flex;
-  flex-wrap: wrap; /* revient à la ligne quand la ligne depasse une certaine longueur*/
-
   justify-content: space-around;
   background-color: #a488f5;
 
-  height: 140%;
+  height: 100%;
   width: 100%;
 }
 .titre-h3,
-.titre-H6 {
+.titre-h6 {
+  font-family: "irish";
   display: flex;
   justify-content: center;
   align-items: center;
