@@ -42,15 +42,14 @@ export class QuestionsService {
   deleteQuestion(questionId: number): Observable<Question> {
     return this.Http.delete<Question>(`${this.urlApi}/${questionId}`);
   }
-  
+
   createNewQuestionWithReponse(
     questionToCreate: Question,
     categorieId: number
   ): Observable<Question> {
-    return this.http.post<Question>(
-      http://localhost:8080/question/${categorieId},
+    return this.Http.post<Question>(
+      'http://localhost:8080/question/${categorieId}',
       questionToCreate
     );
+  }
 }
-
-
