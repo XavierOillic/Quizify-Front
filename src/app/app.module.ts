@@ -19,6 +19,7 @@ import { PageGameComponent } from './pages/page-game/page-game.component';
 import { PageResultsComponent } from './pages/page-results/page-results.component';
 import { IconeComponent } from './components/icone/icone.component';
 import { FormQuestionReponseComponent } from './components/form-question-reponse/form-question-reponse.component';
+import { PostStatsComponent } from './components/post-stats/post-stats.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { FormQuestionReponseComponent } from './components/form-question-reponse
     PageResultsComponent,
      IconeComponent,
      FormQuestionReponseComponent,
+     PostStatsComponent,
   ],
   imports: [
     BrowserModule,

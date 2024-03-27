@@ -8,3 +8,8 @@ html,
 body {
   height: 100%;
 }
+
+@font-face {
+  font-family: rock;
+  src: url("./assets/fonts/RockSalt-Regular.ttf");
+}

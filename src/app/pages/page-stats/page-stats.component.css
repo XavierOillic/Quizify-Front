@@ -1,0 +1,38 @@
+div {
+    background-color: #a488f5;
+}
+
+h1 {
+    text-align: center;
+    font-family: irish;
+    font-size: 5rem;
+}
+
+#bottomRightButton {
+    border: none;
+    text-align: right;
+    border-radius: 5%;
+    background-color: #e0f2b7;
+    font-size: 20px;
+    margin-left: 22rem;
+    margin-bottom: 2rem;
+}
+
+#bottomRightButton:hover {
+    background-color: #d1f283;
+    font-size: 22px;
+}
+
+#bottomCenterButton {
+    margin-left: 30rem;
+    border: none;
+    border-radius: 2%;
+    background-color: #e0f2b7;
+    font-size: 25px;
+    width: 20rem;
+}
+
+#bottomCenterButton:hover {
+    background-color: #d1f283;
+    font-size: 26px;
+}

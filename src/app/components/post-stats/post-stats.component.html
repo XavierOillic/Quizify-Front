@@ -1,0 +1,16 @@
+<div>
+
+    <div class="container">
+        <p class="image-container postit2" [title]="createRecupere.nbCategorie">Nombre de catégories créées : {{
+            createRecupere.nbCategorie }}</p>
+        <p class="image-container postit3">Nombre de questions créées : {{ createRecupere }}</p>
+
+    </div>
+    <div class="container" *ngFor="let Statistiques of statRecupere">
+        <p class="image-container postit1">{{ statRecupere }} : </p>
+    </div>
+
+
+
+
+</div>
