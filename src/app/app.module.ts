@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -19,6 +18,7 @@ import { PageGameComponent } from './pages/page-game/page-game.component';
 import { PageResultsComponent } from './pages/page-results/page-results.component';
 import { IconeComponent } from './components/icone/icone.component';
 import { FormQuestionReponseComponent } from './components/form-question-reponse/form-question-reponse.component';
+import { PageCreateQuestionComponent } from './pages/page-create-question/page-create-question.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +35,9 @@ import { FormQuestionReponseComponent } from './components/form-question-reponse
     PageCreateCategorieComponent,
     PageGameComponent,
     PageResultsComponent,
-     IconeComponent,
-     FormQuestionReponseComponent,
+    IconeComponent,
+    FormQuestionReponseComponent,
+    PageCreateQuestionComponent,
   ],
   imports: [
     BrowserModule,
