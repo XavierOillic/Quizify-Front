@@ -1,3 +1,6 @@
 <div class="page-creer-question">
-    <app-form-question-reponse></app-form-question-reponse>
+    <app-form-question-reponse 
+    (submitFormQuestionReponse)="newQuestionReponseSubmitted($event, categorieId)"></app-form-question-reponse>
 </div>
+
+    <!-- [categorieToDisplay]="categoriesToSend" -->

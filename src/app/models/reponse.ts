@@ -2,7 +2,7 @@ import { Question } from './question';
 
 export interface Reponse {
   id: number;
-  libelle: string;
+  libelleReponse: string;
   question: Question;
   isCorrect: boolean;
 }

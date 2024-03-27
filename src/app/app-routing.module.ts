@@ -13,8 +13,11 @@ import { PageCreateQuestionComponent } from './pages/page-create-question/page-c
 const routes: Routes = [
   { path: '', component: PageHomeComponent },
   { path: 'test', component: PageCreationComponent },
-  { path: 'createCategorie', component: PageCreateCategorieComponent},
-  { path: 'creerQuestion', component: PageCreateQuestionComponent},
+  { path: 'createCategorie', component: PageCreateCategorieComponent },
+  {
+    path: 'creerQuestion/:categorieId',
+    component: PageCreateQuestionComponent,
+  }, ///:categorieId
   { path: 'quiz', component: PageQuizComponent },
   { path: 'quiz/5', component: PageGameComponent },
   { path: 'quiz/5/results', component: PageResultsComponent },

@@ -13,4 +13,8 @@ export class CategoriesService {
   createNewCategorie(categorieToCreate: Categorie): Observable<Categorie> {
     return this.http.post<Categorie>('http://localhost:8080/categorie', categorieToCreate);
   }
+
+  getCategories(): Observable<Categorie[]> {
+    return this.http.get<Categorie[]>('http://localhost:8080/categorie');
+  }
 }
