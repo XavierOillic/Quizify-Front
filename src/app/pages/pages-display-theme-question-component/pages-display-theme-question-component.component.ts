@@ -1,4 +1,12 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Categorie } from 'src/app/models/categorie';
 import { Question } from 'src/app/models/question';
 import { CategoriesService } from 'src/app/services/categories.service';
@@ -14,14 +22,23 @@ export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
     private categoryServ: CategoriesService,
     private questionServ: QuestionsService
   ) {}
+  formCrea!: FormGroup;
 
   categoryDisplayed: Categorie[] = [];
   questionDisplayed: Question[] = [];
 
-  @Input() categoryToDisplay: Categorie[] = [];
+  @Input() category!: Categorie;
+  @Input() question!: Question;
+
   @Input() color: String = '';
 
+  @Output() submitFormCategQuestion = new EventEmitter();
+
+  initFormCategoryResp() {}
+
   ngOnInit(): void {
+    this.initFormCategoryResp();
+
     this.categoryServ.getAllCat().subscribe((response) => {
       console.log(response);
       this.categoryDisplayed = [...response];
@@ -31,6 +48,10 @@ export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
       console.log(response);
       this.questionDisplayed = [...response];
     });
+  }
+  submitForm() {
+    console.log(this.formCrea);
+    this.submitFormCategQuestion.emit(this.formCrea.value);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
