@@ -18,11 +18,9 @@ import { PageGameComponent } from './pages/page-game/page-game.component';
 import { PageResultsComponent } from './pages/page-results/page-results.component';
 import { IconeComponent } from './components/icone/icone.component';
 import { FormQuestionReponseComponent } from './components/form-question-reponse/form-question-reponse.component';
-<<<<<<< HEAD
 import { PostStatsComponent } from './components/post-stats/post-stats.component';
-=======
 import { PageCreateQuestionComponent } from './pages/page-create-question/page-create-question.component';
->>>>>>> 447bc84370af62f984818063cb76d870e9555772
+
 
 @NgModule({
   declarations: [
@@ -39,15 +37,12 @@ import { PageCreateQuestionComponent } from './pages/page-create-question/page-c
     PageCreateCategorieComponent,
     PageGameComponent,
     PageResultsComponent,
-<<<<<<< HEAD
-     IconeComponent,
-     FormQuestionReponseComponent,
-     PostStatsComponent,
-=======
+    IconeComponent,
+    FormQuestionReponseComponent,
+    PostStatsComponent,
     IconeComponent,
     FormQuestionReponseComponent,
     PageCreateQuestionComponent,
->>>>>>> 447bc84370af62f984818063cb76d870e9555772
   ],
   imports: [
     BrowserModule,
@@ -58,4 +53,4 @@ import { PageCreateQuestionComponent } from './pages/page-create-question/page-c
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
