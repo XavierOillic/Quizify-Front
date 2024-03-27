@@ -22,7 +22,7 @@ export class PageCreateQuestionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.categoriesService.getCategories().subscribe((dataCategorie) => {
+    this.categoriesService.getAllCat().subscribe((dataCategorie) => {
       console.log("mes categories", dataCategorie);
       this.categorieToDisplay = [...dataCategorie];
       // this.categoriesToSend = this.getCategorieFrom(dataCategorie);
