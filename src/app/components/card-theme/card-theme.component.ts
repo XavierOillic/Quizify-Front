@@ -10,4 +10,15 @@ export class CardThemeComponent {
   @Input() categorie!: Categorie;
 
   @Input() cardColor: String = '';
+
+  categorieEnDur = [
+    {
+      1: 'Anatomie',
+      2: 'Histoire Géographie',
+    },
+  ];
+
+  ngOnInit() {}
+
+  //NgChange
 }
