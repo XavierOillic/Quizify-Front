@@ -18,8 +18,8 @@ export class PageCreateQuestionComponent implements OnInit {
   constructor(
     private questionsService: QuestionsService,
     private categoriesService: CategoriesService,
-    private route : ActivatedRoute
-  ) {}
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.categoriesService.getAllCat().subscribe((dataCategorie) => {
@@ -27,7 +27,7 @@ export class PageCreateQuestionComponent implements OnInit {
       this.categorieToDisplay = [...dataCategorie];
       // this.categoriesToSend = this.getCategorieFrom(dataCategorie);
       Number(this.route.snapshot.paramMap.get('categorieId'));
-        });
+    });
   }
 
   // getCategoriesFrom() {

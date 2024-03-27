@@ -1,0 +1,48 @@
+.image-container {
+    background-image: url('https://images.wakelet.com/resize?id=Ew8jDmdfST-_K4aoCFTyS&h=735&w=768&q=85');
+    background-size: contain;
+    display: inline-block;
+    /* ajuste la taille de l'image pour s'assurer qu'elle tienne entièrement dans la div */
+    width: 300px;
+    /* largeur de la div */
+    height: 270px;
+    /* hauteur de la div */
+    margin-left: 5rem;
+    margin-right: 2rem;
+}
+
+.container {
+    padding-top: 10px;
+    padding-bottom: 1.5rem;
+}
+
+
+.postit1 {
+    padding-left: 4rem;
+    padding-top: 7rem;
+    font-family: rock;
+    transform: rotate(-9deg);
+}
+
+.postit2 {
+    padding-left: 5rem;
+    padding-top: 6rem;
+    padding-right: 7rem;
+    font-family: rock;
+}
+
+.postit3 {
+    padding-left: 5rem;
+    padding-right: 4rem;
+    padding-top: 7rem;
+    font-family: rock;
+    transform: rotate(9deg);
+}
+
+
+h1 {
+    margin-top: 1rem;
+    text-align: center;
+    font-family: irish;
+    font-size: 5rem;
+}

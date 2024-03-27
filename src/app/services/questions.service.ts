@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class QuestionsService {
-  constructor(private Http: HttpClient) {}
+  constructor(private Http: HttpClient) { }
 
   urlApi = 'http://localhost:8080/question'; // Je variablise mon url d'Appel URL
 

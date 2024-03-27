@@ -12,7 +12,7 @@ export class PageCreateCategorieComponent {
   constructor(
     private categoriesService: CategoriesService,
     private router: Router
-  ) {}
+  ) { }
 
   newCategorieSubmitted(categorie: Categorie) {
     this.categoriesService.createNewCategorie(categorie).subscribe((resp) => {

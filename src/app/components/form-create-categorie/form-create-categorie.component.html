@@ -1,15 +1,14 @@
 <form (ngSubmit)="onSubmitFormCategorie()" [formGroup]="formCategorie">
-    <div class="mb-3"> <!--mb = margin bottom-->
-        <label for="input-name-categorie" class="form-label">Je crée mon thème</label>
-       <div class="inputCenter">
-        <input type="text" formControlName="libelle" id="input-name-categorie" class="form-control"/>
-        </div>
+  <div class="mb-3"> <!--mb = margin bottom-->
+    <label for="input-name-categorie" class="form-label">Je crée mon thème</label>
+    <div class="inputCenter">
+      <input type="text" formControlName="libelle" id="input-name-categorie" class="form-control" />
     </div>
-  <button
-    [disabled]="formCategorie.invalid"
-    type="submit"
-    class="button-validerCategorie"
-  >
+  </div>
+  <button [disabled]="formCategorie.invalid" type="submit" class="button-validerCategorie">
+    Valider
+  </button>
+  <button [disabled]="formCategorie.invalid" type="submit" class="button-validerCategorie">
     Valider
   </button>
 </form>
