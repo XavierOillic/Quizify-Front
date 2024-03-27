@@ -1,14 +1,23 @@
+.card-body {
+  margin: 1%;
+}
+.icone {
+  margin: 2%;
+}
 .card-design {
-  height: 15em;
-  width: 11rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  height: 16em;
+  width: 17em;
+
+  margin: 1.5em;
 
   background-color: #c4ed6d;
 
   border-radius: 10%;
-  border: 1px solid grey;
+  border: 3px solid grey;
   box-shadow: 5px 5px 2px grey;
-
-  justify-content: space-around;
-
-  text-align: center;
 }
