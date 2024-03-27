@@ -8,4 +8,6 @@ import { Categorie } from 'src/app/models/categorie';
 })
 export class PageHomeComponent {
   @Input() categorie!: Categorie;
+
+  
 }

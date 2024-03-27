@@ -11,8 +11,8 @@ import { PageResultsComponent } from './pages/page-results/page-results.componen
 
 const routes: Routes = [
   { path: '', component: PageHomeComponent },
-  { path: 'test', component: PageCreationComponent },
-  { path: 'createCategorie', component: PageCreateCategorieComponent},
+  { path: 'creation', component: PageCreationComponent },
+  { path: 'createCategorie', component: PageCreateCategorieComponent },
   { path: 'quiz', component: PageQuizComponent },
   { path: 'quiz/5', component: PageGameComponent },
   { path: 'quiz/5/results', component: PageResultsComponent },

@@ -1,8 +1,27 @@
-.design-general {
-  background-color: #a488f5;
-  height: 100%;
-  width: 100%;
-}
 .design-row {
   display: flex;
+}
+.container-card {
+  padding-top: 1%;
+
+  display: flex;
+  flex-wrap: wrap; /* revient à la ligne quand la ligne depasse une certaine longueur*/
+
+  justify-content: space-around;
+  background-color: #a488f5;
+
+  height: 140%;
+  width: 100%;
+}
+.titre-h3,
+.titre-H6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1200px) {
+  .one-plant {
+    width: 30%;
+  }
 }

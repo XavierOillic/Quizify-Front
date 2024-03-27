@@ -17,10 +17,11 @@
       <div>
         <div
           class="button-create"
-          [routerLink]="['test']"
+          [routerLink]="['creation']"
           routerLinkActive="active"
         >
           <a><img id="play" src="assets/create_btn.png" /></a>
+          <a><img id ="play-hover" src="assets/create_btn_hover.png" /></a>
         </div>
       </div>
     </div>
@@ -29,7 +30,7 @@
         <div
           id="create"
           class="button-play"
-          routerLink="**"
+          [routerLink]="['quiz']"
           routerLinkActive="active"
         >
           <a><img src="assets/play_btn.png" /></a>
