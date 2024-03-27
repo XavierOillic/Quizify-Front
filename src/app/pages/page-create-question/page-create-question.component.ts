@@ -15,24 +15,21 @@ import { ReponsesService } from 'src/app/services/reponses.service';
 export class PageCreateQuestionComponent implements OnInit {
   categorieToDisplay: Categorie[] = [];
   categorieId!: number;
+
   constructor(
     private questionsService: QuestionsService,
     private categoriesService: CategoriesService,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.categoriesService.getAllCat().subscribe((dataCategorie) => {
-      console.log("mes categories", dataCategorie);
+      console.log("mes categories de page create", dataCategorie);
       this.categorieToDisplay = [...dataCategorie];
       // this.categoriesToSend = this.getCategorieFrom(dataCategorie);
       Number(this.route.snapshot.paramMap.get('categorieId'));
     });
   }
-
-  // getCategoriesFrom() {
-
-  // }
 
   newQuestionReponseSubmitted(question: Question, categorieId: number) {
     this.questionsService
