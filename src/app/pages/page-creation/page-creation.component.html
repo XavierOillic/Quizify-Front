@@ -1,12 +1,25 @@
-<div class="design-general">
-  <div class="design-row">
-    <app-card-theme [cardColor]="'green'"></app-card-theme>
-    <app-card-theme [cardColor]="'green'"></app-card-theme>
-    <app-card-theme [cardColor]="'green'"></app-card-theme>
-  </div>
-  <div class="design-row">
-    <app-card-theme [cardColor]="'green'"></app-card-theme>
-    <app-card-theme [cardColor]="'green'"></app-card-theme>
-    <app-card-theme [cardColor]="'green'"></app-card-theme>
+<div class="container-card">
+  <div>
+    <div class="titre-h3">
+      <h3>Espace Création...</h3>
+      <app-icone
+        [iconName]="'pencil-square'"
+        [iconColor]="'black'"
+        [iconSize]="2"
+      ></app-icone>
+    </div>
+    <div class="titre-h6">
+      <h6>
+        Choisissez en une et créer vos Questions/Réponses, ou créer d'abord une
+        Catégorie.
+      </h6>
+    </div>
+
+    <div class="design-row">
+      <app-card-theme
+        *ngFor="let c of categoryToDisplay"
+        [category]="c"
+      ></app-card-theme>
+    </div>
   </div>
 </div>

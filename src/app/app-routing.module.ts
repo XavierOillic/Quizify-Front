@@ -12,7 +12,7 @@ import { PageCreateQuestionComponent } from './pages/page-create-question/page-c
  //chemin de mes pages
 const routes: Routes = [
   { path: '', component: PageHomeComponent },
-  { path: 'test', component: PageCreationComponent },
+  { path: 'creation', component: PageCreationComponent },
   { path: 'createCategorie', component: PageCreateCategorieComponent },
   {
     path: 'creerQuestion/:categorieId',

@@ -1,8 +1,27 @@
-.design-general {
+.design-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* revient à la ligne quand la ligne depasse une certaine longueur*/
+}
+.container-card {
+  padding-top: 1%;
+
+  justify-content: space-around;
   background-color: #a488f5;
+
   height: 100%;
   width: 100%;
 }
-.design-row {
+.titre-h3,
+.titre-h6 {
+  font-family: "irish";
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1200px) {
+  .one-plant {
+    width: 30%;
+  }
 }
