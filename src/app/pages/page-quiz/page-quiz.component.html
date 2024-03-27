@@ -2,6 +2,12 @@
   <div class="container text-center">
     <h1>Quiz</h1>
     <h3 class="mb-5">Je clique pour selectionner le thème du quiz :</h3>
-    <app-card-theme routerLink="/quiz/5"></app-card-theme>
+    <div class="d-flex justify-content-around flex-wrap">
+      <app-card-theme
+        *ngFor="let cat of categoriesToDisplay"
+        class="col-3 my-3"
+        [category]="cat"
+      ></app-card-theme>
+    </div>
   </div>
 </div>

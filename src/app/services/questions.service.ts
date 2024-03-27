@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class QuestionsService {
-  constructor(private Http: HttpClient) {}
+  constructor(private Http: HttpClient) { }
 
   urlApi = 'http://localhost:8080/question'; // Je variablise mon url d'Appel URL
 
@@ -42,6 +42,14 @@ export class QuestionsService {
   deleteQuestion(questionId: number): Observable<Question> {
     return this.Http.delete<Question>(`${this.urlApi}/${questionId}`);
   }
+
+  createNewQuestionWithReponse(
+    questionToCreate: Question,
+    categorieId: number
+  ): Observable<Question> {
+    return this.Http.post<Question>(
+      'http://localhost:8080/question/${categorieId}',
+      questionToCreate
+    );
+  }
 }
-
-

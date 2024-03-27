@@ -12,12 +12,12 @@ export class PageCreateCategorieComponent {
   constructor(
     private categoriesService: CategoriesService,
     private router: Router
-  ) {}
+  ) { }
 
   newCategorieSubmitted(categorie: Categorie) {
     this.categoriesService.createNewCategorie(categorie).subscribe((resp) => {
       console.log("new cat createFind", resp);
-      this.router.navigate(['/creerQuestion', categorie.id]);//DYNAMIQUE
+      this.router.navigate(['/creerQuestion', resp.id]);//DYNAMIQUE
     })
   }
 }
