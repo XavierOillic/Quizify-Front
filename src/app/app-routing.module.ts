@@ -9,10 +9,15 @@ import { PageCreateCategorieComponent } from './pages/page-create-categorie/page
 import { PageGameComponent } from './pages/page-game/page-game.component';
 import { PageResultsComponent } from './pages/page-results/page-results.component';
 import { PageCreateQuestionComponent } from './pages/page-create-question/page-create-question.component';
- //chemin de mes pages
+import { PagesDisplayThemeQuestionComponentComponent } from './pages/pages-display-theme-question-component/pages-display-theme-question-component.component';
+//chemin de mes pages
 const routes: Routes = [
   { path: '', component: PageHomeComponent },
   { path: 'creation', component: PageCreationComponent },
+  {
+    path: 'affichageCategorieQuestion/:categorieId',
+    component: PagesDisplayThemeQuestionComponentComponent,
+  },
   { path: 'createCategorie', component: PageCreateCategorieComponent },
   {
     path: 'creerQuestion/:categorieId',

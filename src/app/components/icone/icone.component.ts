@@ -15,6 +15,7 @@ export class IconeComponent {
     | 'hourglass-split'
     | 'pencil-square'
     | 'balloon-heart'
+    | 'check2-square'
     | 'pencil' = 'pencil';
 
   @Input() iconSize: number = 2;
