@@ -27,7 +27,7 @@ export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
   categoryDisplayed: Categorie[] = [];
   questionDisplayed: Question[] = [];
 
-  @Input() category!: Categorie;
+  category!: Categorie;
   @Input() question!: Question;
 
   @Input() color: String = '';

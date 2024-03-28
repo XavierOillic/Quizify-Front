@@ -1,8 +1,9 @@
 <div class="design-global">
   <div class="titre-h3">
     <div>
-      <h3>[ CATEGORY LIBELLE ]</h3>
-      <!--<h3 [title]="category.libelle">{{ category.libelle }}</h3>-->
+      <!--<h3>[ CATEGORY LIBELLE ]</h3>-->
+
+      <h3 *ngIf="category">{{ category.libelle }}</h3>
     </div>
     <button class="trash" type="submit">
       <app-icone
