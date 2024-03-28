@@ -1,4 +1,5 @@
-<a>
+<a *ngIf="category">
+  <!--NGIF, ici, si category existe... Il n'est pas nécessaire ici-->
   <div class="card-body">
     <div class="card-design">
       <app-icone
@@ -7,7 +8,7 @@
         [iconColor]="'grey'"
         [iconSize]="2.5"
       ></app-icone>
-      <h4 [title]="category.libelle">{{ category.libelle }}</h4>
+      <h5 [title]="category.libelle">{{ category.libelle }}</h5>
     </div>
   </div>
 </a>

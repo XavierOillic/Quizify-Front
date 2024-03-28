@@ -9,11 +9,8 @@ import { QuestionsService } from 'src/app/services/questions.service';
   styleUrls: ['./page-creation.component.css'],
 })
 export class PageCreationComponent {
-  constructor(
-    private categoryServ: CategoriesService,
-    private questionServ: QuestionsService
-  ) {}
-  categorieTheme: Categorie[] = [];
+  constructor(private categoryServ: CategoriesService) {}
+  @Input() categorieTheme!: undefined;
 
   @Input() categoryToDisplay: Categorie[] = [];
   @Input() cardColor: String = '';

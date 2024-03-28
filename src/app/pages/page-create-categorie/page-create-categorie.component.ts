@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Categorie } from 'src/app/models/categorie';
 import { CategoriesService } from 'src/app/services/categories.service';
@@ -9,15 +9,16 @@ import { CategoriesService } from 'src/app/services/categories.service';
   styleUrls: ['./page-create-categorie.component.css'],
 })
 export class PageCreateCategorieComponent {
+
   constructor(
     private categoriesService: CategoriesService,
     private router: Router
-  ) { }
+  ) {}
 
   newCategorieSubmitted(categorie: Categorie) {
     this.categoriesService.createNewCategorie(categorie).subscribe((resp) => {
       console.log("new cat createFind", resp);
-      this.router.navigate(['/creerQuestion', resp.id]);//DYNAMIQUE
+      this.router.navigate(['/creerQuestion', resp.id]);//DYNAMIQUE      
     })
   }
 }

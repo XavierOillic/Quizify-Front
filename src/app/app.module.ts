@@ -20,7 +20,7 @@ import { IconeComponent } from './components/icone/icone.component';
 import { FormQuestionReponseComponent } from './components/form-question-reponse/form-question-reponse.component';
 import { PostStatsComponent } from './components/post-stats/post-stats.component';
 import { PageCreateQuestionComponent } from './pages/page-create-question/page-create-question.component';
-
+import { PagesDisplayThemeQuestionComponentComponent } from './pages/pages-display-theme-question-component/pages-display-theme-question-component.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +43,7 @@ import { PageCreateQuestionComponent } from './pages/page-create-question/page-c
     IconeComponent,
     FormQuestionReponseComponent,
     PageCreateQuestionComponent,
+    PagesDisplayThemeQuestionComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,4 +54,4 @@ import { PageCreateQuestionComponent } from './pages/page-create-question/page-c
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
