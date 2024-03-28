@@ -1,6 +1,6 @@
 <div class="container">
-    <p class="image-container postit" *ngIf="creation">Nombre de Catégories créées : {{creation.nbCategorie}}</p>
-    <p class="image-container postit" *ngIf="creation">Nombre de questions créées : {{creation.nbQuestion}}</p>
+    <p class="image-container postit" *ngIf="creation">Nombre de Catégories créées : {{ numberOfCategories}}</p>
+    <p class="image-container postit" *ngIf="creation">Nombre de questions créées : {{ numberOfQuestions }}</p>
     <p class="image-container postit" *ngIf="stats">{{stats.libelle}} : {{stats.score }}</p>
 
 

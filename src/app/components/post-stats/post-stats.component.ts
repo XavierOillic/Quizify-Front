@@ -10,5 +10,7 @@ import { Stats } from 'src/app/models/stats';
 export class PostStatsComponent {
   @Input() stats!: Stats;
   @Input() creation!: Creation;
+  @Input() numberOfCategories!: number;
+  @Input() numberOfQuestions!: number;
 
 }
