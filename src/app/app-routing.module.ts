@@ -9,7 +9,7 @@ import { PageCreateCategorieComponent } from './pages/page-create-categorie/page
 import { PageGameComponent } from './pages/page-game/page-game.component';
 import { PageResultsComponent } from './pages/page-results/page-results.component';
 import { PageCreateQuestionComponent } from './pages/page-create-question/page-create-question.component';
- //chemin de mes pages
+//chemin de mes pages
 const routes: Routes = [
   { path: '', component: PageHomeComponent },
   { path: 'creation', component: PageCreationComponent },
@@ -19,8 +19,8 @@ const routes: Routes = [
     component: PageCreateQuestionComponent,
   }, ///:categorieId
   { path: 'quiz', component: PageQuizComponent },
-  { path: 'quiz/5', component: PageGameComponent },
-  { path: 'quiz/5/results', component: PageResultsComponent },
+  { path: 'quiz/:id', component: PageGameComponent },
+  { path: 'quiz/art/results', component: PageResultsComponent },
   { path: 'stats', component: PageStatsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
