@@ -1,8 +1,8 @@
 <div class="vert">
   <div class="container text-center">
     <h1 *ngIf="theme" class="pt-3 mb-5">{{ theme.libelle }}</h1>
-    <div *ngIf="allQuestions">
-      <p *ngFor="let question of allQuestions">
+    <div *ngIf="questionsSelected">
+      <p *ngFor="let question of questionsSelected">
         {{ question.libelleQuestion }}
       </p>
     </div>

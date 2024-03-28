@@ -16,11 +16,13 @@ export class PageGameComponent implements OnInit {
   themeId!: number;
   theme!: Categorie;
   allQuestions: Question[] = [];
+  questionsSelected: Question[] = [];
 
   constructor(
     private activeRoute: ActivatedRoute,
     private categoryService: CategoriesService,
-    private questionService: QuestionsService
+    private questionService: QuestionsService,
+    private reponseService: ReponsesService
   ) {}
 
   ngOnInit(): void {
@@ -33,9 +35,16 @@ export class PageGameComponent implements OnInit {
         error: () => {},
       });
     this.questionService.getByCategorie(this.themeId).subscribe((data) => {
+      console.log(this.allQuestions);
       this.allQuestions = [...data];
+      this.questionsSelected = this.responseRandomizer(this.allQuestions, 3);
     });
   }
 
-  responseRandomizer(categorieId: number) {}
+  responseRandomizer(array: Question[], subsetLength: number): Question[] {
+    const copy = array;
+    copy.sort(() => 0.5 - Math.random());
+    console.log(copy);
+    return copy.slice(0, subsetLength);
+  }
 }

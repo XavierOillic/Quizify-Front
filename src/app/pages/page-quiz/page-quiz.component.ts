@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Categorie } from 'src/app/models/categorie';
 import { CategoriesService } from 'src/app/services/categories.service';
 
@@ -12,10 +11,7 @@ export class PageQuizComponent implements OnInit {
   theme: any;
   categoriesToDisplay: Categorie[] = [];
 
-  constructor(
-    private categoryService: CategoriesService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private categoryService: CategoriesService) {}
 
   ngOnInit(): void {
     this.categoryService.getAllCat().subscribe((data) => {

@@ -24,7 +24,7 @@ export class QuestionsService {
 
   //GET BY CATEGORIE
   getByCategorie(categorieId: number): Observable<Question[]> {
-    return this.Http.get<Question[]>(`${this.urlApi}/${categorieId}`);
+    return this.Http.get<Question[]>(`${this.urlApi}/question/${categorieId}`);
   }
 
   // POST
