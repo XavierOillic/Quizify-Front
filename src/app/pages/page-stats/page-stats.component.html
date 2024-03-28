@@ -3,8 +3,11 @@
     <div class="d-flex">
         <div class="container">
             <div class="container-postit"></div>
-            <app-post-stats class="one-stat" *ngFor="let stats of statToDisplay" [stats]="stats"></app-post-stats>
-            <app-post-stats class="one-stat" *ngFor="let creation of creationToDisplay"></app-post-stats>
+            <app-post-stats class="one-stat" *ngFor="let creationData of creationToDisplay" [creation]="creationData"
+                [numberOfCategories]="numberOfCategories" [numberOfQuestions]="numberOfQuestions"></app-post-stats>
+            <app-post-stats class="one-stat" *ngFor="let statsData of statToDisplay"
+                [stats]="statsData"></app-post-stats>
+
             <button id="bottomCenterButton">Réinitialiser</button>
             <button id="bottomRightButton">Voir plus</button>
         </div>
