@@ -28,39 +28,23 @@ export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
   formEdit!: FormGroup;
 
   categoryDisplayed!: Categorie[];
-  questionDisplayed!: Question[];
+  questionDisplayed: Question[] = [];
 
+  questionId!: Question;
   category!: Categorie;
   @Input() question!: Question;
 
-  @Input() color: String = '';
-
   @Output() submitFormCategQuestion = new EventEmitter();
 
-  initFormCategoryResp() {
-    console.log(
-      'affichage des questions dans la page affichage :',
-      this.questionDisplayed
-    );
-    this.formEdit = new FormGroup({
-      question1: new FormControl(this.questionDisplayed, Validators.required),
-      question2: new FormControl(this.questionDisplayed, Validators.required),
-      question3: new FormControl(this.questionDisplayed, Validators.required),
-      question4: new FormControl(this.questionDisplayed),
-    });
-  }
-
   ngOnInit(): void {
-    this.initFormCategoryResp(); // Initialisation du Form.
-
     // GET ONE CATEGORY
     const cheminUrl = this.route.snapshot.paramMap;
     const categoryIdFromUrl = Number(cheminUrl.get('categoryId'));
-    console.log('Affichage dans AFFICHAGE', categoryIdFromUrl);
-
+    console.log('Affichage dans AFFICHAGE ID Cat', categoryIdFromUrl);
+    //GET ONE
     this.categoryServ.getOne(categoryIdFromUrl).subscribe({
       next: (responseId) => {
-        console.log('Data catgory loaded :', responseId);
+        console.log('Data category loaded :', responseId);
         this.category = responseId;
       },
       error: () => {},
@@ -79,10 +63,28 @@ export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
         console.log(response);
         this.questionDisplayed = [...response];
       });
+
+    const cheminUrlQuest = this.route.snapshot.paramMap;
+    const questionIdFromUrl = Number(cheminUrlQuest.get('questionId'));
+    console.log('Affichage dans AFFICHAGE ID Quest', questionIdFromUrl);
+    this.questionServ.getOne(questionIdFromUrl).subscribe({
+      next: () => {
+        this.questionDisplayed = this.questionDisplayed.filter(
+          (x) => x.id !== questionIdFromUrl
+        );
+      },
+    });
   }
-  submitForm() {
-    console.log(this.formEdit);
-    this.submitFormCategQuestion.emit(this.formEdit.value);
+
+  deleteQuestionButton(deletedQuestion: number) {
+    this.questionServ.deleteQuestion(deletedQuestion).subscribe({
+      next: () => {
+        this.questionDisplayed = this.questionDisplayed.filter(
+          (x) => x.id !== deletedQuestion
+        );
+      },
+    });
+    console.log('La Plante a été supprimée : ', deletedQuestion);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
