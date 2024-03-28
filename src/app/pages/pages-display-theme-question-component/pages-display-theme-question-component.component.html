@@ -1,8 +1,6 @@
 <div class="design-global">
   <div class="titre-h3">
     <div>
-      <!--<h3>[ CATEGORY LIBELLE ]</h3>-->
-
       <h3 *ngIf="category">{{ category.libelle }}</h3>
     </div>
     <button class="trash" type="submit">
@@ -26,8 +24,8 @@
       disponible dans le quiz!
     </h6>
   </div>
-  <div class="container">
-    <form (ngSubmit)="submitForm()" [formGroup]="formCrea" class="form-design">
+  <div class="container" *ngIf="question">
+    <form (ngSubmit)="submitForm()" [formGroup]="formEdit" class="form-design">
       <div class="questions">
         <div>
           <label for="question" class="question-modifiable">
@@ -37,9 +35,15 @@
         <div class="input-button">
           <input
             type="text"
-            formControlName="question-1"
-            id="question-1"
+            formControlName="question1"
+            id="idQuestion1"
             class="form-control"
+            [ngClass]="{
+              'is-invalid':
+                formEdit.controls['idQuestion1'].touched &&
+                formEdit.controls['idQuestion1'].invalid
+            }"
+            aria-labelledby="invalid-feedback-input-name"
             [placeholder]="question"
           />
           <button class="trash" type="submit">
@@ -65,9 +69,15 @@
         <div class="input-button">
           <input
             type="text"
-            formControlName="question-2"
-            id="question-1"
+            formControlName="question2"
+            id="idQuestion2"
             class="form-control"
+            [ngClass]="{
+              'is-invalid':
+                formEdit.controls['idQuestion1'].touched &&
+                formEdit.controls['idQuestion1'].invalid
+            }"
+            aria-labelledby="invalid-feedback-input-name"
             [placeholder]="question"
           /><button class="trash" type="submit">
             <app-icone
@@ -92,8 +102,8 @@
         <div class="input-button">
           <input
             type="text"
-            formControlName="question-3"
-            id="question-1"
+            formControlName="question3"
+            id="idQuestion3"
             class="form-control"
             [placeholder]="question"
           /><button class="trash" type="submit">
@@ -119,8 +129,8 @@
         <div class="input-button">
           <input
             type="text"
-            formControlName="question-4"
-            id="question-1"
+            formControlName="question4"
+            id="idQuestion4"
             class="form-control"
             [placeholder]="question"
           /><button class="trash" type="submit">

@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '', component: PageHomeComponent },
   { path: 'creation', component: PageCreationComponent },
   {
-    path: 'affichageCategorieQuestion/:categorieId',
+    path: 'affichageCategorieQuestion/:categoryId',
     component: PagesDisplayThemeQuestionComponentComponent,
   },
   { path: 'createCategorie', component: PageCreateCategorieComponent },
