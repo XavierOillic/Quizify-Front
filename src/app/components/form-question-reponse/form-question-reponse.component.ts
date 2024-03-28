@@ -56,7 +56,8 @@ export class FormQuestionReponseComponent implements OnInit {
   onSubmitQuestionReponse() {
     const reponseActuelle = this.formQuestionReponse.value;
     this.lesReponses.push(reponseActuelle);
-    this.submitFormQuestionReponse.emit(reponseActuelle);    
+    this.submitFormQuestionReponse.emit(reponseActuelle);
+    console.log(reponseActuelle);    
   }
 }
 //  onSubmitQuestionReponse() {
