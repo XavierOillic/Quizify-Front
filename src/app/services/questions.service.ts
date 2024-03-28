@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class QuestionsService {
-  constructor(private Http: HttpClient) { }
+  constructor(private Http: HttpClient) {}
 
   urlApi = 'http://localhost:8080/question'; // Je variablise mon url d'Appel URL
 
@@ -20,6 +20,11 @@ export class QuestionsService {
   getOne(questionId: number): Observable<Question> {
     const urlQuestionId = `${this.urlApi}/${questionId}`;
     return this.Http.get<Question>(urlQuestionId);
+  }
+
+  //GET BY CATEGORIE
+  getByCategorie(categorieId: number): Observable<Question[]> {
+    return this.Http.get<Question[]>(`${this.urlApi}/question/${categorieId}`);
   }
 
   // POST
