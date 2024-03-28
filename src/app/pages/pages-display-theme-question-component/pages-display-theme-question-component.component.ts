@@ -25,6 +25,11 @@ export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
     private route: ActivatedRoute
   ) {}
 
+  displayDiv() {
+    this.isDivDisplayed = !this.isDivDisplayed;
+  }
+  isDivDisplayed = false;
+
   formEdit!: FormGroup;
 
   categoryDisplayed!: Categorie[];

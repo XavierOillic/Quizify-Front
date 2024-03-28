@@ -45,7 +45,13 @@
               [iconColor]="'white'"
             ></app-icone>
           </button>
-          <button class="edit" type="submit">
+          <button
+            class="edit"
+            type="submit"
+            value="edit-button"
+            id="edit-button"
+            routerLink="/creerQuestion/{{ category.id }}"
+          >
             <app-icone
               [iconName]="'pencil'"
               [iconSize]="1.5"
@@ -57,7 +63,7 @@
     </div>
     <div class="valid-button">
       <div>
-        <button class="validation">
+        <button class="validation" type="button" (click)="displayDiv()">
           <app-icone
             [iconName]="'check2-square'"
             [iconSize]="1.5"
@@ -65,6 +71,7 @@
           ></app-icone>
         </button>
       </div>
+
       <div class="creer-question">
         <div><h5>... Tu as de meilleures questions ?!</h5></div>
         <div>
@@ -84,3 +91,17 @@
     </div>
   </div>
 </div>
+<dialog>
+  <div class="div-appears" *ngIf="isDivDisplayed">
+    <div *ngIf="category">
+      <span
+        >Notre Categorie
+        <h3>{{ category.libelle }}</h3>
+        vous a plut. Jouez ici !
+      </span>
+    </div>
+    <button type="button" routerLink="/quiz/{{ category.id }}">
+      Jouons 😃 !
+    </button>
+  </div>
+</dialog>

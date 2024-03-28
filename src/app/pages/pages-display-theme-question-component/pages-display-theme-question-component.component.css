@@ -102,3 +102,25 @@ h5 {
   font-size: x-large;
   color: #c4ed6d;
 }
+.div-appears {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: 10;
+  left: 20;
+
+  position: relative;
+  z-index: 2;
+
+  background-color: #c4ed6d;
+
+  height: 50%;
+  width: 50%;
+}
+.div-appears h1 {
+  font-family: "irish";
+}
+.div-appears button {
+  background-color: #9587be;
+}
