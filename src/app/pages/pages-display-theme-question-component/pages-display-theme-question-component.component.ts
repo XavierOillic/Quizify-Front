@@ -27,8 +27,8 @@ export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
 
   formEdit!: FormGroup;
 
-  categoryDisplayed: Categorie[] = [];
-  questionDisplayed: Question[] = [];
+  categoryDisplayed!: Categorie[];
+  questionDisplayed!: Question[];
 
   category!: Categorie;
   @Input() question!: Question;
@@ -40,22 +40,13 @@ export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
   initFormCategoryResp() {
     console.log(
       'affichage des questions dans la page affichage :',
-      this.question
+      this.questionDisplayed
     );
     this.formEdit = new FormGroup({
-      question1: new FormControl(
-        this.question.libelleQuestion,
-        Validators.required
-      ),
-      question2: new FormControl(
-        this.question.libelleQuestion,
-        Validators.required
-      ),
-      question3: new FormControl(
-        this.question.libelleQuestion,
-        Validators.required
-      ),
-      question4: new FormControl(this.question.libelleQuestion),
+      question1: new FormControl(this.questionDisplayed, Validators.required),
+      question2: new FormControl(this.questionDisplayed, Validators.required),
+      question3: new FormControl(this.questionDisplayed, Validators.required),
+      question4: new FormControl(this.questionDisplayed),
     });
   }
 
@@ -81,13 +72,13 @@ export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
       this.categoryDisplayed = [...response];
     });
 
-    // GET ALL QUESTION
-    this.questionServ.getAllQuestion().subscribe((response) => {
-      console.log(response);
-      this.questionDisplayed = [...response];
-    });
-
-    // GET QUESTON VIA CATEGORIE
+    // GET ALL QUESTION BY CATEGORY
+    this.questionServ
+      .getByCategorie(categoryIdFromUrl)
+      .subscribe((response) => {
+        console.log(response);
+        this.questionDisplayed = [...response];
+      });
   }
   submitForm() {
     console.log(this.formEdit);

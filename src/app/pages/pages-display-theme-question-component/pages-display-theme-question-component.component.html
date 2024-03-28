@@ -24,7 +24,7 @@
       disponible dans le quiz!
     </h6>
   </div>
-  <div class="container" *ngIf="question">
+  <div class="container" *ngIf="questionDisplayed">
     <form (ngSubmit)="submitForm()" [formGroup]="formEdit" class="form-design">
       <div class="questions">
         <div>
@@ -38,13 +38,8 @@
             formControlName="question1"
             id="idQuestion1"
             class="form-control"
-            [ngClass]="{
-              'is-invalid':
-                formEdit.controls['idQuestion1'].touched &&
-                formEdit.controls['idQuestion1'].invalid
-            }"
             aria-labelledby="invalid-feedback-input-name"
-            [placeholder]="question"
+            [placeholder]="questionDisplayed"
           />
           <button class="trash" type="submit">
             <app-icone
@@ -72,13 +67,8 @@
             formControlName="question2"
             id="idQuestion2"
             class="form-control"
-            [ngClass]="{
-              'is-invalid':
-                formEdit.controls['idQuestion1'].touched &&
-                formEdit.controls['idQuestion1'].invalid
-            }"
             aria-labelledby="invalid-feedback-input-name"
-            [placeholder]="question"
+            [placeholder]="questionDisplayed"
           /><button class="trash" type="submit">
             <app-icone
               [iconName]="'trash'"
@@ -105,7 +95,7 @@
             formControlName="question3"
             id="idQuestion3"
             class="form-control"
-            [placeholder]="question"
+            [placeholder]="questionDisplayed"
           /><button class="trash" type="submit">
             <app-icone
               [iconName]="'trash'"
@@ -132,7 +122,7 @@
             formControlName="question4"
             id="idQuestion4"
             class="form-control"
-            [placeholder]="question"
+            [placeholder]="questionDisplayed"
           /><button class="trash" type="submit">
             <app-icone
               [iconName]="'trash'"
