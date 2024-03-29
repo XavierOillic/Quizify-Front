@@ -1,8 +1,10 @@
 import {
+  AfterViewInit,
   Component,
   EventEmitter,
   Input,
   OnChanges,
+  OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
@@ -18,17 +20,14 @@ import { QuestionsService } from 'src/app/services/questions.service';
   templateUrl: './pages-display-theme-question-component.component.html',
   styleUrls: ['./pages-display-theme-question-component.component.css'],
 })
-export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
+export class PagesDisplayThemeQuestionComponentComponent
+  implements OnInit, AfterViewInit
+{
   constructor(
     private categoryServ: CategoriesService,
     private questionServ: QuestionsService,
     private route: ActivatedRoute
   ) {}
-
-  displayDiv() {
-    this.isDivDisplayed = !this.isDivDisplayed;
-  }
-  isDivDisplayed = false;
 
   formEdit!: FormGroup;
 
@@ -92,7 +91,24 @@ export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
     console.log('La Plante a été supprimée : ', deletedQuestion);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+  /// BOITE MODALE TYPE POPUP
+  displayDiv() {
+    this.isDivDisplayed = !this.isDivDisplayed;
+  }
+  close() {
+    this.isDivDisplayed = false;
+  }
+  isDivDisplayed = false;
+
+  //// BOITE MODALE TYPE POPUP
+
+  dialog: any;
+
+  ngAfterViewInit(): void {
+   this.dialog = document.querySelector('dialog');
+  }
+  ouvrirDialog() {
+    console.log('test...', this.dialog);
+    this.dialog!.showModal();
   }
 }

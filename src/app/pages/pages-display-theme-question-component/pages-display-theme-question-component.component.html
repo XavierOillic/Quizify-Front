@@ -24,6 +24,7 @@
       disponible dans le quiz!
     </h6>
   </div>
+
   <div class="container" *ngIf="questionDisplayed">
     <div class="questions-div" *ngFor="let q of questionDisplayed">
       <div>
@@ -88,20 +89,29 @@
           </button>
         </div>
       </div>
+      <div class="div-appears" *ngIf="isDivDisplayed">
+        <div *ngIf="category">
+          <span
+            >Notre Categorie
+            <h3>{{ category.libelle }}</h3>
+            vous a plut. Jouez ici !
+          </span>
+        </div>
+        <button type="button" routerLink="/quiz/{{ category.id }}">
+          Jouons 😃 !
+        </button>
+        <button type="button" (click)="close()">Fermer</button>
+      </div>
     </div>
   </div>
+  <!--<button type="button" (click)="ouvrirDialog()">OUVRIR Le truc modal</button>-->
+  <button type="button" (click)="dialogRef.showModal()">
+    OUVRIR Le truc modal
+  </button>
+  <dialog #dialogRef>
+    <p>Salutations, à tous et à toutes !</p>
+    <form method="dialog">
+      <button>OK</button>
+    </form>
+  </dialog>
 </div>
-<dialog>
-  <div class="div-appears" *ngIf="isDivDisplayed">
-    <div *ngIf="category">
-      <span
-        >Notre Categorie
-        <h3>{{ category.libelle }}</h3>
-        vous a plut. Jouez ici !
-      </span>
-    </div>
-    <button type="button" routerLink="/quiz/{{ category.id }}">
-      Jouons 😃 !
-    </button>
-  </div>
-</dialog>
