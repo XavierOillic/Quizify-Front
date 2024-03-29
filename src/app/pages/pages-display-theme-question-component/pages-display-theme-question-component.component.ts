@@ -99,6 +99,9 @@ export class PagesDisplayThemeQuestionComponentComponent
   dialog: any;
   dialogSupprConfirm: any;
 
+  colorOk: string = '';
+  colorSuppr: string = "'red'";
+
   ouvrirModal() {
     this.dialog!.showModal();
   }
@@ -106,7 +109,9 @@ export class PagesDisplayThemeQuestionComponentComponent
     this.dialog!.close();
   }
 
-  confirmSuppr() {
+  questionIdToDelete!: number;
+  confirmSuppr(id: number) {
+    this.questionIdToDelete = id;
     this.dialogSupprConfirm!.showModal();
   }
   closeModalSuppr() {

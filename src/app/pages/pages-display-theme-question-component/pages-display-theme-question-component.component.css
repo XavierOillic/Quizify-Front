@@ -109,9 +109,7 @@ dialog {
   border-radius: 5px;
 
   height: 25%;
-  width: 40%;
-
-  background-color: #d4d5d2;
+  width: 45%;
 }
 h3 {
   font-family: "irish";
@@ -134,7 +132,7 @@ dialog .button-rond {
   width: 6rem;
 }
 dialog button {
-  margin: 10%;
+  margin: 5%;
 }
 /* Permet d'afficher un fond derrière une fenetre modal*/
 ::backdrop {
@@ -148,11 +146,6 @@ dialog button {
   opacity: 0.6;
 }
 
-#dialogConfirm {
-  padding: 5%;
-
-  background-color: rgb(188, 77, 77);
-}
-#dialogConfirm button {
-  background-color: rgb(27, 9, 9);
+.suppr-text-button {
+  display: flex;
 }

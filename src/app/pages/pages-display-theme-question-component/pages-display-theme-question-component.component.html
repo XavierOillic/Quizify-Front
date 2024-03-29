@@ -38,7 +38,7 @@
             type="button"
             value="delete-button"
             id="delete-button"
-            (click)="confirmSuppr()"
+            (click)="confirmSuppr(q.id)"
           >
             <app-icone
               [iconName]="'trash'"
@@ -93,7 +93,7 @@
   </div>
 </div>
 
-<dialog>
+<dialog [style.background-color]="'#d4d5d2'" [style.color]="'grey'">
   <div class="text-button">
     <div class="text" *ngIf="category">
       <div>
@@ -121,21 +121,36 @@
   </div>
 </dialog>
 
-<dialog id="dialogConfirm">
-  <div *ngFor="let q of questionDisplayed">
-    <div>
-      <div>Etes vous sûrּּ‧e de vouloir supprimer cette question ?!</div>
-      <div>{{ q.libelleQuestion }}</div>
+<dialog
+  id="dialogConfirm"
+  [style.background-color]="'rgb(143, 46, 46)'"
+  [style.color]="'white'"
+>
+  <div class="suppr-text-button" *ngFor="let q of questionDisplayed">
+    <div class="suppr-text" *ngIf="q.id == questionIdToDelete">
+      <div>
+        <h6>Etes vous sûrּּ‧e de vouloir supprimer cette question ?!</h6>
+      </div>
+      <div>
+        <h3>{{ q.libelleQuestion }}</h3>
+      </div>
     </div>
-    <div>
-      <button (click)="deleteQuestionButton(q.id)">
+    <div class="suppr-button">
+      <button
+        (click)="deleteQuestionButton(questionIdToDelete)"
+        *ngIf="q.id == questionIdToDelete"
+      >
         <app-icone
           [iconName]="'check-lg'"
           [iconSize]="2"
           [iconColor]="'white'"
         ></app-icone>
       </button>
-      <button (click)="closeModalSuppr()">
+      <button
+        (click)="closeModalSuppr()"
+        [style.background-color]="'rgb(143, 46, 46)'"
+        *ngIf="q.id == questionIdToDelete"
+      >
         <app-icone
           [iconName]="'x-circle'"
           [iconSize]="2"
