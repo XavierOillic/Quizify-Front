@@ -64,7 +64,7 @@
     </div>
     <div class="valid-button">
       <div>
-        <button class="validation" type="button" (click)="displayDiv()">
+        <button class="validation" type="button" (click)="ouvrirModal()">
           <app-icone
             [iconName]="'check2-square'"
             [iconSize]="1.5"
@@ -89,29 +89,20 @@
           </button>
         </div>
       </div>
-      <div class="div-appears" *ngIf="isDivDisplayed">
-        <div *ngIf="category">
-          <span
-            >Notre Categorie
-            <h3>{{ category.libelle }}</h3>
-            vous a plut. Jouez ici !
-          </span>
-        </div>
-        <button type="button" routerLink="/quiz/{{ category.id }}">
-          Jouons 😃 !
-        </button>
-        <button type="button" (click)="close()">Fermer</button>
-      </div>
     </div>
   </div>
-  <!--<button type="button" (click)="ouvrirDialog()">OUVRIR Le truc modal</button>-->
-  <button type="button" (click)="dialogRef.showModal()">
-    OUVRIR Le truc modal
-  </button>
-  <dialog #dialogRef>
-    <p>Salutations, à tous et à toutes !</p>
-    <form method="dialog">
-      <button>OK</button>
-    </form>
-  </dialog>
 </div>
+
+<dialog>
+  <div *ngIf="category">
+    <span
+      >Notre Categorie
+      <h3>{{ category.libelle }}</h3>
+      vous a plut.
+    </span>
+  </div>
+  <button type="button" routerLink="/quiz/{{ category.id }}">
+    Jouons 😃 !
+  </button>
+  <button type="button" (click)="closeModal()">Fermer</button>
+</dialog>

@@ -92,23 +92,17 @@ export class PagesDisplayThemeQuestionComponentComponent
   }
 
   /// BOITE MODALE TYPE POPUP
-  displayDiv() {
-    this.isDivDisplayed = !this.isDivDisplayed;
+  ngAfterViewInit(): void {
+    this.dialog = document.querySelector('dialog');
   }
-  close() {
-    this.isDivDisplayed = false;
-  }
-  isDivDisplayed = false;
-
-  //// BOITE MODALE TYPE POPUP
-
   dialog: any;
 
-  ngAfterViewInit(): void {
-   this.dialog = document.querySelector('dialog');
-  }
-  ouvrirDialog() {
-    console.log('test...', this.dialog);
+  ouvrirModal() {
     this.dialog!.showModal();
   }
+  closeModal() {
+    this.dialog!.close();
+  }
+
+  //// BOITE MODALE TYPE POPUP
 }
