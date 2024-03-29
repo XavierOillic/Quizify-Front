@@ -6,16 +6,26 @@
     </h1>
     <div class="row d-flex align-items-center" *ngIf="question3">
       <div class="col bg-secondary-subtle p-3 rounded">
-        <h5>{{ question1.libelleQuestion }}</h5>
-        <div class="d-flex align-items-center justify-content-center">
-          <p class="m-0 me-3">{{ reponse1.libelleReponse }}</p>
-          <span *ngIf="reponse1.isCorrect">
+        <h5 class="mt-3 mx-5">{{ question1.libelleQuestion }}</h5>
+        <div
+          *ngIf="reponse1.isCorrect"
+          class="d-flex align-items-center justify-content-center border border-success rounded"
+        >
+          <p class="m-0 mx-3">{{ reponse1.libelleReponse }}</p>
+          <span>
             <app-icone
               [iconName]="'check-lg'"
               [iconColor]="'green'"
               [iconSize]="2"
-            ></app-icone></span
-          ><span *ngIf="!reponse1.isCorrect"
+            ></app-icone
+          ></span>
+        </div>
+        <div
+          *ngIf="!reponse1.isCorrect"
+          class="d-flex align-items-center justify-content-center"
+        >
+          <p class="m-0 mx-3">{{ reponse1.libelleReponse }}</p>
+          <span
             ><app-icone
               [iconName]="'x-circle'"
               [iconColor]="'red'"
@@ -23,16 +33,41 @@
             ></app-icone
           ></span>
         </div>
-        <h5>{{ question2.libelleQuestion }}</h5>
-        <div class="d-flex align-items-center justify-content-center">
-          <p class="m-0 me-3">{{ reponse2.libelleReponse }}</p>
-          <span *ngIf="reponse2.isCorrect"
-            ><app-icone
+
+        <div
+          *ngIf="bonneReponse1"
+          class="d-flex align-items-center justify-content-center border border-success rounded"
+        >
+          <p class="m-0 mx-3">
+            <b>La bonne réponse :</b> {{ bonneReponse1.libelleReponse }}
+          </p>
+          <app-icone
+            [iconName]="'check-lg'"
+            [iconColor]="'green'"
+            [iconSize]="2"
+          ></app-icone>
+        </div>
+
+        <h5 class="mt-5 mx-5">{{ question2.libelleQuestion }}</h5>
+        <div
+          *ngIf="reponse2.isCorrect"
+          class="d-flex align-items-center justify-content-center border border-success rounded"
+        >
+          <p class="m-0 mx-3">{{ reponse2.libelleReponse }}</p>
+          <span>
+            <app-icone
               [iconName]="'check-lg'"
               [iconColor]="'green'"
               [iconSize]="2"
-            ></app-icone></span
-          ><span *ngIf="!reponse2.isCorrect"
+            ></app-icone
+          ></span>
+        </div>
+        <div
+          *ngIf="!reponse2.isCorrect"
+          class="d-flex align-items-center justify-content-center"
+        >
+          <p class="m-0 mx-3">{{ reponse2.libelleReponse }}</p>
+          <span
             ><app-icone
               [iconName]="'x-circle'"
               [iconColor]="'red'"
@@ -40,33 +75,78 @@
             ></app-icone
           ></span>
         </div>
-        <h5>{{ question3.libelleQuestion }}</h5>
-        <div class="d-flex align-items-center justify-content-center">
-          <p class="m-0 me-3">{{ reponse3.libelleReponse }}</p>
-          <span *ngIf="reponse3.isCorrect"
-            ><app-icone
+        <div
+          *ngIf="bonneReponse2"
+          class="d-flex align-items-center justify-content-center border border-success rounded"
+        >
+          <p class="m-0 mx-3">
+            <b>La bonne réponse :</b> {{ bonneReponse2.libelleReponse }}
+          </p>
+          <app-icone
+            [iconName]="'check-lg'"
+            [iconColor]="'green'"
+            [iconSize]="2"
+          ></app-icone>
+        </div>
+
+        <h5 class="mt-5 mx-5">{{ question3.libelleQuestion }}</h5>
+        <div
+          *ngIf="reponse3.isCorrect"
+          class="d-flex align-items-center justify-content-center border border-success rounded"
+        >
+          <p class="m-0 mx-3">{{ reponse3.libelleReponse }}</p>
+          <span>
+            <app-icone
               [iconName]="'check-lg'"
               [iconColor]="'green'"
               [iconSize]="2"
-            ></app-icone></span
-          ><span *ngIf="!reponse3.isCorrect"
+            ></app-icone
+          ></span>
+        </div>
+        <div
+          *ngIf="!reponse3.isCorrect"
+          class="d-flex align-items-center justify-content-center"
+        >
+          <p class="m-0 mx-3">{{ reponse3.libelleReponse }}</p>
+          <span
             ><app-icone
               [iconName]="'x-circle'"
               [iconColor]="'red'"
               [iconSize]="2"
             ></app-icone
           ></span>
+        </div>
+        <div
+          *ngIf="bonneReponse3"
+          class="d-flex align-items-center justify-content-center border border-success rounded"
+        >
+          <p class="m-0 mx-3">
+            <b>La bonne réponse :</b> {{ bonneReponse3.libelleReponse }}
+          </p>
+          <app-icone
+            [iconName]="'check-lg'"
+            [iconColor]="'green'"
+            [iconSize]="2"
+          ></app-icone>
         </div>
       </div>
       <div class="col">
         <p>
-          <span *ngIf="goodAnswers >= 2">Bravo !</span
+          <span *ngIf="goodAnswers === 3">Superbe, tu as tout bon !</span>
+          <span *ngIf="goodAnswers === 2">Bravo, presque un sans faute !</span
           ><span *ngIf="goodAnswers < 2"
             >Une mauvaise réponse est source d'apprentissage !</span
           >
         </p>
-        <p>{{ goodAnswers }} réponses sur 3 !</p>
-        <img src="" alt="trophee" />
+        <p *ngIf="goodAnswers > 1">{{ goodAnswers }} bonnes réponses sur 3</p>
+        <p *ngIf="goodAnswers <= 1">{{ goodAnswers }} bonne réponse sur 3</p>
+        <app-icone
+          *ngIf="goodAnswers >= 2"
+          [iconName]="'trophy-fill'"
+          [iconColor]="'yellow'"
+          [iconSize]="10"
+        ></app-icone>
+        <p *ngIf="goodAnswers < 2">Essaie encore tu vas y arriver !</p>
       </div>
     </div>
     <div class="my-5 d-flex justify-content-around">

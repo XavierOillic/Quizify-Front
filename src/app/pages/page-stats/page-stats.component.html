@@ -3,11 +3,13 @@
     <div class="d-flex">
         <div class="container">
             <div class="container-postit"></div>
-            <app-post-stats class="one-stat" *ngFor="let creationData of creationToDisplay" [creation]="creationData"
+            <!-- <app-post-stats class="one-stat" *ngFor="let creationData of creationToDisplay" [creation]="creationData"
                 [numberOfCategories]="numberOfCategories" [numberOfQuestions]="numberOfQuestions"></app-post-stats>
             <app-post-stats class="one-stat" *ngFor="let statsData of statToDisplay"
                 [stats]="statsData"></app-post-stats>
-            <app-post-stats class="one-stat" *ngIf="games" [games]="games"></app-post-stats>
+            <app-post-stats class="one-stat" *ngIf="games" [games]="games"></app-post-stats> -->
+            <app-post-stats class="one-stat" *ngFor="let game of games" [libelle]="game.libelle" [value]="game.value">
+            </app-post-stats>
 
 
 

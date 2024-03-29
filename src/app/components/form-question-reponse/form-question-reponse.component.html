@@ -3,7 +3,7 @@
     <fieldset>
     <div class="mb-3">
     <h1>Je crée la question pour le thème:</h1>
-    <h2 *ngIf="categorieId">{{ categorieId.libelle }}</h2><!--ngIf, si j'ai recup ma categorie, affiche moi son {{ catId.id }} -->
+    <h2 *ngIf="categorieId">{{ categorieId.libelle }}</h2>
     <p>Je saisie ma question, les choix de réponses et j`indique quelle réponse est correcte</p>
     
         <div class="input-group">
@@ -19,7 +19,7 @@
             <label for="input-reponse1" class="form-label">Reponse 1</label>
             <div class="inputReponse1">
                 <input type="text" formControlName="reponse1" id="input-reponse1" class="form-control" />                
-                <input type="radio" id="rep1" name="drone" value="rep1" checked />               
+                <input formControlName="reponseCorrecte" type="radio" id="input-reponse1" name="drone" value="0"/> 
             </div>
         </div>
         
@@ -29,7 +29,7 @@
             <label for="input-reponse2" class="form-label">Reponse 2</label>
             <div class="inputReponse2">
                 <input type="text" formControlName="reponse2" id="input-reponse2" class="form-control" />
-                <input type="radio" id="rep2" name="drone" value="rep2" checked />
+                <input formControlName="reponseCorrecte" type="radio" id="input-reponse2" name="drone" value="1"/>
             </div>
         </div>
 
@@ -39,7 +39,7 @@
             <label for="input-reponse3" class="form-label">Reponse 3</label>
             <div class="inputReponse3">
                 <input type="text" formControlName="reponse3" id="input-reponse3" class="form-control" />
-                <input type="radio" id="rep3" name="drone" value="rep3" checked />
+                <input formControlName="reponseCorrecte" type="radio" id="input-reponse3" name="drone" value="2"/>
             </div>
         </div>
 
@@ -49,7 +49,7 @@
             <label for="input-reponse4" class="form-label">Reponse 4</label>
             <div class="inputReponse4">
                 <input type="text" formControlName="reponse4" id="input-reponse4" class="form-control" />
-                <input type="radio" id="rep4" name="drone" value="rep4" checked />
+                <input formControlName="reponseCorrecte" type="radio" id="input-reponse4" name="drone" value="3"/>
             </div>
         </div>
     </div>
