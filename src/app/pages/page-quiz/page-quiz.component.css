@@ -2,3 +2,8 @@
   background-color: #c4ed6d;
   height: 100vh;
 }
+
+h1,
+h3 {
+  font-family: "irish";
+}

@@ -21,6 +21,7 @@ export class PageGameComponent implements OnInit {
   allQuestions: Question[] = [];
   questionsSelected: Question[] = [];
   reponsesSelected: Reponse[][] = [];
+  rightAnswers: Reponse[] = [];
 
   quizForm!: FormGroup;
   submitFormQuiz = new EventEmitter<Reponse>();

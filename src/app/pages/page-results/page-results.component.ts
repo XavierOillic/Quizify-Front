@@ -5,6 +5,7 @@ import { Question } from 'src/app/models/question';
 import { Reponse } from 'src/app/models/reponse';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { MessageService } from 'src/app/services/message.service';
+import { PlayerStatService } from 'src/app/services/player-stat.service';
 import { QuestionsService } from 'src/app/services/questions.service';
 import { ReponsesService } from 'src/app/services/reponses.service';
 
@@ -20,20 +21,25 @@ export class PageResultsComponent implements OnInit {
   responses = [];
 
   reponse1!: Reponse;
+  bonneReponse1!: Reponse;
   question1!: Question;
   reponse2!: Reponse;
+  bonneReponse2!: Reponse;
   question2!: Question;
   reponse3!: Reponse;
+  bonneReponse3!: Reponse;
   question3!: Question;
 
   goodAnswers: number = 0;
+  rightAnswers: Reponse[] = [];
 
   constructor(
     private messageService: MessageService,
     private categoryService: CategoriesService,
     private reponseService: ReponsesService,
     private questionService: QuestionsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private localStorage: PlayerStatService
   ) {}
 
   ngOnInit(): void {
@@ -55,6 +61,17 @@ export class PageResultsComponent implements OnInit {
         this.reponse1 = res;
         if (this.reponse1.isCorrect) {
           this.goodAnswers++;
+        } else {
+          let ans = this.reponseService.getByQuestion(this.reponse1.questionId);
+          for (let i = 0; i < 4; i++) {
+            ans.subscribe({
+              next: (data) => {
+                if (data[i].isCorrect) {
+                  this.bonneReponse1 = data[i];
+                }
+              },
+            });
+          }
         }
         this.questionService.getOne(this.reponse1.questionId).subscribe({
           next: (data) => {
@@ -68,6 +85,17 @@ export class PageResultsComponent implements OnInit {
         this.reponse2 = res;
         if (this.reponse2.isCorrect) {
           this.goodAnswers++;
+        } else {
+          let ans = this.reponseService.getByQuestion(this.reponse2.questionId);
+          for (let i = 0; i < 4; i++) {
+            ans.subscribe({
+              next: (data) => {
+                if (data[i].isCorrect) {
+                  this.bonneReponse2 = data[i];
+                }
+              },
+            });
+          }
         }
         this.questionService.getOne(this.reponse2.questionId).subscribe({
           next: (data) => {
@@ -81,6 +109,17 @@ export class PageResultsComponent implements OnInit {
         this.reponse3 = res;
         if (this.reponse3.isCorrect) {
           this.goodAnswers++;
+        } else {
+          let ans = this.reponseService.getByQuestion(this.reponse3.questionId);
+          for (let i = 0; i < 4; i++) {
+            ans.subscribe({
+              next: (data) => {
+                if (data[i].isCorrect) {
+                  this.bonneReponse3 = data[i];
+                }
+              },
+            });
+          }
         }
         this.questionService.getOne(this.reponse3.questionId).subscribe({
           next: (data) => {
@@ -89,5 +128,7 @@ export class PageResultsComponent implements OnInit {
         });
       },
     });
+
+    // this.localStorage.saveData('quiz', this.goodAnswers.toString());
   }
 }
