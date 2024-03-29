@@ -38,7 +38,7 @@
             type="button"
             value="delete-button"
             id="delete-button"
-            (click)="deleteQuestionButton(q.id)"
+            (click)="confirmSuppr()"
           >
             <app-icone
               [iconName]="'trash'"
@@ -94,15 +94,54 @@
 </div>
 
 <dialog>
-  <div *ngIf="category">
-    <span
-      >Notre Categorie
+  <div class="text-button">
+    <div class="text" *ngIf="category">
+      <div>
+        <p>Ce Thème et ses questions vous ont plut ?</p>
+      </div>
+
       <h3>{{ category.libelle }}</h3>
-      vous a plut.
-    </span>
+    </div>
+    <div class="button-rond">
+      <button type="button" routerLink="/quiz/{{ category.id }}">
+        <app-icone
+          [iconName]="'controller'"
+          [iconSize]="2"
+          [iconColor]="'black'"
+        ></app-icone>
+      </button>
+      <button type="button" (click)="closeModal()">
+        <app-icone
+          [iconName]="'x-circle'"
+          [iconSize]="2"
+          [iconColor]="'black'"
+        ></app-icone>
+      </button>
+    </div>
   </div>
-  <button type="button" routerLink="/quiz/{{ category.id }}">
-    Jouons 😃 !
-  </button>
-  <button type="button" (click)="closeModal()">Fermer</button>
+</dialog>
+
+<dialog id="dialogConfirm">
+  <div *ngFor="let q of questionDisplayed">
+    <div>
+      <div>Etes vous sûrּּ‧e de vouloir supprimer cette question ?!</div>
+      <div>{{ q.libelleQuestion }}</div>
+    </div>
+    <div>
+      <button (click)="deleteQuestionButton(q.id)">
+        <app-icone
+          [iconName]="'check-lg'"
+          [iconSize]="2"
+          [iconColor]="'white'"
+        ></app-icone>
+      </button>
+      <button (click)="closeModalSuppr()">
+        <app-icone
+          [iconName]="'x-circle'"
+          [iconSize]="2"
+          [iconColor]="'white'"
+        ></app-icone>
+      </button>
+    </div>
+  </div>
 </dialog>

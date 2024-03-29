@@ -94,14 +94,23 @@ export class PagesDisplayThemeQuestionComponentComponent
   /// BOITE MODALE TYPE POPUP
   ngAfterViewInit(): void {
     this.dialog = document.querySelector('dialog');
+    this.dialogSupprConfirm = document.getElementById('dialogConfirm');
   }
   dialog: any;
+  dialogSupprConfirm: any;
 
   ouvrirModal() {
     this.dialog!.showModal();
   }
   closeModal() {
     this.dialog!.close();
+  }
+
+  confirmSuppr() {
+    this.dialogSupprConfirm!.showModal();
+  }
+  closeModalSuppr() {
+    this.dialogSupprConfirm!.close();
   }
 
   //// BOITE MODALE TYPE POPUP
