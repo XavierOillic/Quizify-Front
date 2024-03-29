@@ -8,10 +8,13 @@ import { Stats } from 'src/app/models/stats';
   styleUrls: ['./post-stats.component.css']
 })
 export class PostStatsComponent {
-  @Input() stats!: Stats;
-  @Input() creation!: Creation;
-  @Input() numberOfCategories!: number;
-  @Input() numberOfQuestions!: number;
-  @Input() games!: number;
+  // @Input() stats!: Stats;
+  // @Input() creation!: Creation;
+  // @Input() numberOfCategories!: number;
+  // @Input() numberOfQuestions!: number;
+  // @Input() games!: number;
+  @Input() libelle!: string;
+  @Input() value!: string;
+
 
 }

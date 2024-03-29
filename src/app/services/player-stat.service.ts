@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 })
 export class PlayerStatService {
 
-  games: number = 0;
 
   constructor() { }
 
@@ -15,7 +14,11 @@ export class PlayerStatService {
   }
 
   getData(key: string) {
-    return localStorage.getItem(key);
+    const data = localStorage.getItem(key);
+    if (data != null) {
+      return JSON.parse(data);
+    } return null;
+
   }
 
   removeData(key: string) {
