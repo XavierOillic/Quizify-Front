@@ -10,3 +10,7 @@ fieldset {
   border-image: initial;
   border-radius: 10px;
 }
+
+h1 {
+  font-family: "irish";
+}

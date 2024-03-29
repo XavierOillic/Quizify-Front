@@ -19,6 +19,7 @@ export class IconeComponent {
     | 'check-lg'
     | 'x-circle'
     | 'controller'
+    | 'trophy-fill'
     | 'pencil' = 'pencil';
 
   @Input() iconSize: number = 2;
