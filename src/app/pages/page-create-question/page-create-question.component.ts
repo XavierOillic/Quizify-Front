@@ -28,12 +28,16 @@ export class PageCreateQuestionComponent implements OnInit {
       this.categorieToDisplay = [...dataCategorie];
       // this.categoriesToSend = this.getCategorieFrom(dataCategorie);
       Number(this.route.snapshot.paramMap.get('categorieId'));
+      console.log("ça arrive là ou pas?", this.categorieId);
     });
   }
 
-  newQuestionReponseSubmitted(question: Question, categorieId: number) {
+  newQuestionReponseSubmitted(question: Question) {
+
+    console.log(question);
+    
     this.questionsService
-      .createNewQuestionWithReponse(question, categorieId)
+      .createNewQuestionWithReponse(question)
       .subscribe((resp) => {
         console.log('new question ok', resp);
       });
