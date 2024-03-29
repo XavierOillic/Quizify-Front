@@ -1,12 +1,7 @@
 <div class="parent">
   <div class="child2">
     <span>
-      <img
-        class="titre"
-        src="assets/quizify_titre.png"
-        height="90em"
-        width="auto"
-      />
+      <img class="titre" src="assets/quizify_titre.png" height="90em" width="auto" />
     </span>
     <span class="sous_titre">
       <p>Répondez à nos questions Quizz et Créez les votres...</p>
@@ -15,32 +10,15 @@
   <div class="child1">
     <div class="create-design">
       <div>
-        <div
-          class="button-create"
-          [routerLink]="['creation']"
-          routerLinkActive="active"
-        >
+        <div class="button-create" [routerLink]="['creation']" routerLinkActive="active">
           <a><img id="play" src="assets/create_btn.png" /></a>
           <a><img id="play-hover" src="assets/create_btn_hover.png" /></a>
-          <!--
-    <button [title]="monTitle" (click)="displayDiv()">
-    Afficher la Div avec mon logo dedans !
-  </button>
-  <div *ngIf="isDivDisplayed">
-    <img src="assets/logo.png" />
-  </div>
--->
         </div>
       </div>
     </div>
     <div class="play-design">
       <div>
-        <div
-          id="create"
-          class="button-play"
-          [routerLink]="['quiz']"
-          routerLinkActive="active"
-        >
+        <div id="create" class="button-play" [routerLink]="['quiz']" routerLinkActive="active">
           <a><img src="assets/play_btn.png" /></a>
         </div>
       </div>

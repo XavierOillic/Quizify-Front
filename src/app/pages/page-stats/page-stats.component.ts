@@ -3,6 +3,7 @@ import { Creation } from 'src/app/models/creation';
 import { Stats } from 'src/app/models/stats';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { CreationService } from 'src/app/services/creation.service';
+import { PlayerStatService } from 'src/app/services/player-stat.service';
 import { QuestionsService } from 'src/app/services/questions.service';
 import { StatistiquesService } from 'src/app/services/statistiques.service';
 
@@ -17,32 +18,47 @@ export class PageStatsComponent implements OnInit {
   creationToDisplay: Creation[] = [];
   numberOfQuestions: number = 0;
   numberOfCategories: number = 0;
+  games!: number;
 
   constructor(
     private statistiqueService: StatistiquesService,
     private creationService: CreationService,
     private questionService: QuestionsService,
-    private categorieService: CategoriesService) { }
+    private categorieService: CategoriesService,
+    private playerService: PlayerStatService
+  ) { }
 
   ngOnInit(): void {
+
+
     this.statistiqueService.getStat().subscribe((data) => {
       console.log(data);
       this.statToDisplay = [...data];
     });
+
+
     this.creationService.getCreate().subscribe((data) => {
       console.log(data);
       this.creationToDisplay = [...data];
     });
 
+
     this.categorieService.getAllCat().subscribe((categories) => {
       this.numberOfCategories = categories.length;
     });
+
 
     this.questionService.getAllQuestion().subscribe((questions) => {
       this.numberOfQuestions = questions.length;
     });
 
 
+    this.games = Number(this.playerService.getData('games'));
+
+  }
+
+  clearData() {
+    this.playerService.clearData();
   }
 
 }

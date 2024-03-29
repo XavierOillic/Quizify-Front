@@ -12,5 +12,6 @@ export class PostStatsComponent {
   @Input() creation!: Creation;
   @Input() numberOfCategories!: number;
   @Input() numberOfQuestions!: number;
+  @Input() games!: number;
 
 }
