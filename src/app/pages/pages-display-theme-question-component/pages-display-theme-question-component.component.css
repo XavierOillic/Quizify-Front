@@ -1,5 +1,5 @@
 .design-global {
-  height: 100%;
+  height: calc(100vh - 128);
   background-color: #a488f5;
   padding-top: 1%;
   padding-bottom: 9%;
