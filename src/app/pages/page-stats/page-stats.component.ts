@@ -18,7 +18,7 @@ export class PageStatsComponent implements OnInit {
   creationToDisplay: Creation[] = [];
   numberOfQuestions: number = 0;
   numberOfCategories: number = 0;
-  games!: number;
+  games: any[] | null = [];
 
   constructor(
     private statistiqueService: StatistiquesService,
@@ -53,7 +53,7 @@ export class PageStatsComponent implements OnInit {
     });
 
 
-    this.games = Number(this.playerService.getData('games'));
+    this.games = this.playerService.getData('games');
 
   }
 
