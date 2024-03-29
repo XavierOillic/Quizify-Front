@@ -1,4 +1,11 @@
 
+.create {
+    height: calc(100vh - 128px);
+    padding-top: 50%;
+    padding-bottom: 50%;
+
+}
+
 form {
     text-align: center;
 }
@@ -25,3 +32,4 @@ form {
     display: flex;
     justify-content: center;
 }
+
