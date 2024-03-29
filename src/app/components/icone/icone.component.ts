@@ -18,6 +18,7 @@ export class IconeComponent {
     | 'check2-square'
     | 'check-lg'
     | 'x-circle'
+    | 'controller'
     | 'trophy-fill'
     | 'pencil' = 'pencil';
 

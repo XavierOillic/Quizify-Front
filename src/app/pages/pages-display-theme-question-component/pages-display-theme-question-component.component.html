@@ -1,9 +1,7 @@
 <div class="design-global">
   <div class="titre-h3">
     <div>
-      <!--<h3>[ CATEGORY LIBELLE ]</h3>-->
-
-      <h3 *ngIf="category">{{ category.libelle }}</h3>
+      <h1 *ngIf="category">{{ category.libelle }}</h1>
     </div>
     <button class="trash" type="submit">
       <app-icone
@@ -26,111 +24,35 @@
       disponible dans le quiz!
     </h6>
   </div>
-  <div class="container">
-    <form (ngSubmit)="submitForm()" [formGroup]="formCrea" class="form-design">
-      <div class="questions">
-        <div>
-          <label for="question" class="question-modifiable">
-            Question 1 :</label
-          >
+
+  <div class="container" *ngIf="questionDisplayed">
+    <div class="questions-div" *ngFor="let q of questionDisplayed">
+      <div>
+        <h2 for="question" class="question">Question :</h2>
+        <div class="question-libelle">
+          {{ q.libelleQuestion }}
         </div>
         <div class="input-button">
-          <input
-            type="text"
-            formControlName="question-1"
-            id="question-1"
-            class="form-control"
-            [placeholder]="question"
-          />
-          <button class="trash" type="submit">
+          <button
+            class="trash"
+            type="button"
+            value="delete-button"
+            id="delete-button"
+            (click)="confirmSuppr(q.id)"
+          >
             <app-icone
               [iconName]="'trash'"
               [iconSize]="1.5"
               [iconColor]="'white'"
             ></app-icone>
           </button>
-          <button class="edit" type="submit">
-            <app-icone
-              [iconName]="'pencil'"
-              [iconSize]="1.5"
-              [iconColor]="'black'"
-            ></app-icone>
-          </button>
-        </div>
-        <div>
-          <label for="question" class="question-modifiable">
-            Question 2 :</label
+          <button
+            class="edit"
+            type="submit"
+            value="edit-button"
+            id="edit-button"
+            routerLink="/creerQuestion/{{ category.id }}"
           >
-        </div>
-        <div class="input-button">
-          <input
-            type="text"
-            formControlName="question-2"
-            id="question-1"
-            class="form-control"
-            [placeholder]="question"
-          /><button class="trash" type="submit">
-            <app-icone
-              [iconName]="'trash'"
-              [iconSize]="1.5"
-              [iconColor]="'white'"
-            ></app-icone>
-          </button>
-          <button class="edit" type="submit">
-            <app-icone
-              [iconName]="'pencil'"
-              [iconSize]="1.5"
-              [iconColor]="'black'"
-            ></app-icone>
-          </button>
-        </div>
-        <div>
-          <label for="question" class="question-modifiable">
-            Question 3 :</label
-          >
-        </div>
-        <div class="input-button">
-          <input
-            type="text"
-            formControlName="question-3"
-            id="question-1"
-            class="form-control"
-            [placeholder]="question"
-          /><button class="trash" type="submit">
-            <app-icone
-              [iconName]="'trash'"
-              [iconSize]="1.5"
-              [iconColor]="'white'"
-            ></app-icone>
-          </button>
-          <button class="edit" type="submit">
-            <app-icone
-              [iconName]="'pencil'"
-              [iconSize]="1.5"
-              [iconColor]="'black'"
-            ></app-icone>
-          </button>
-        </div>
-        <div>
-          <label for="question" class="question-modifiable">
-            Question 4 :</label
-          >
-        </div>
-        <div class="input-button">
-          <input
-            type="text"
-            formControlName="question-4"
-            id="question-1"
-            class="form-control"
-            [placeholder]="question"
-          /><button class="trash" type="submit">
-            <app-icone
-              [iconName]="'trash'"
-              [iconSize]="1.5"
-              [iconColor]="'white'"
-            ></app-icone>
-          </button>
-          <button class="edit" type="submit">
             <app-icone
               [iconName]="'pencil'"
               [iconSize]="1.5"
@@ -139,13 +61,102 @@
           </button>
         </div>
       </div>
-      <button class="validation">
-        <app-icone
-          [iconName]="'check2-square'"
-          [iconSize]="2.5"
-          [iconColor]="'green'"
-        ></app-icone>
-      </button>
-    </form>
+    </div>
+    <div class="valid-button">
+      <div>
+        <button class="validation" type="button" (click)="ouvrirModal()">
+          <app-icone
+            [iconName]="'check2-square'"
+            [iconSize]="1.5"
+            [iconColor]="'green'"
+          ></app-icone>
+        </button>
+      </div>
+
+      <div class="creer-question">
+        <div><h5>... Tu as de meilleures questions ?!</h5></div>
+        <div>
+          <button
+            class="create-question"
+            routerLink="/creerQuestion/{{ category.id }}"
+          >
+            <app-icone
+              [iconName]="'pencil-square'"
+              [iconSize]="1.5"
+              [iconColor]="'green'"
+            ></app-icone>
+            Créer les... !
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<dialog [style.background-color]="'#d4d5d2'" [style.color]="'grey'">
+  <div class="text-button">
+    <div class="text" *ngIf="category">
+      <div>
+        <p>Ce Thème et ses questions vous ont plut ?</p>
+      </div>
+
+      <h3>{{ category.libelle }}</h3>
+    </div>
+    <div class="button-rond">
+      <button type="button" routerLink="/quiz/{{ category.id }}">
+        <app-icone
+          [iconName]="'controller'"
+          [iconSize]="2"
+          [iconColor]="'black'"
+        ></app-icone>
+      </button>
+      <button type="button" (click)="closeModal()">
+        <app-icone
+          [iconName]="'x-circle'"
+          [iconSize]="2"
+          [iconColor]="'black'"
+        ></app-icone>
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<dialog
+  id="dialogConfirm"
+  [style.background-color]="'rgb(143, 46, 46)'"
+  [style.color]="'white'"
+>
+  <div class="suppr-text-button" *ngFor="let q of questionDisplayed">
+    <div class="suppr-text" *ngIf="q.id == questionIdToDelete">
+      <div>
+        <h6>Etes vous sûrּּ‧e de vouloir supprimer cette question ?!</h6>
+      </div>
+      <div>
+        <h3>{{ q.libelleQuestion }}</h3>
+      </div>
+    </div>
+    <div class="suppr-button">
+      <button
+        (click)="deleteQuestionButton(questionIdToDelete)"
+        *ngIf="q.id == questionIdToDelete"
+      >
+        <app-icone
+          [iconName]="'check-lg'"
+          [iconSize]="2"
+          [iconColor]="'white'"
+        ></app-icone>
+      </button>
+      <button
+        (click)="closeModalSuppr()"
+        [style.background-color]="'rgb(143, 46, 46)'"
+        *ngIf="q.id == questionIdToDelete"
+      >
+        <app-icone
+          [iconName]="'x-circle'"
+          [iconSize]="2"
+          [iconColor]="'white'"
+        ></app-icone>
+      </button>
+    </div>
+  </div>
+</dialog>

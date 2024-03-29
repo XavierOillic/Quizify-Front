@@ -1,12 +1,15 @@
 import {
+  AfterViewInit,
   Component,
   EventEmitter,
   Input,
   OnChanges,
+  OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Categorie } from 'src/app/models/categorie';
 import { Question } from 'src/app/models/question';
 import { CategoriesService } from 'src/app/services/categories.service';
@@ -17,44 +20,103 @@ import { QuestionsService } from 'src/app/services/questions.service';
   templateUrl: './pages-display-theme-question-component.component.html',
   styleUrls: ['./pages-display-theme-question-component.component.css'],
 })
-export class PagesDisplayThemeQuestionComponentComponent implements OnChanges {
+export class PagesDisplayThemeQuestionComponentComponent
+  implements OnInit, AfterViewInit
+{
   constructor(
     private categoryServ: CategoriesService,
-    private questionServ: QuestionsService
+    private questionServ: QuestionsService,
+    private route: ActivatedRoute
   ) {}
-  formCrea!: FormGroup;
 
-  categoryDisplayed: Categorie[] = [];
+  formEdit!: FormGroup;
+
+  categoryDisplayed!: Categorie[];
   questionDisplayed: Question[] = [];
 
+  questionId!: Question;
   category!: Categorie;
   @Input() question!: Question;
 
-  @Input() color: String = '';
-
   @Output() submitFormCategQuestion = new EventEmitter();
 
-  initFormCategoryResp() {}
-
   ngOnInit(): void {
-    this.initFormCategoryResp();
+    // GET ONE CATEGORY
+    const cheminUrl = this.route.snapshot.paramMap;
+    const categoryIdFromUrl = Number(cheminUrl.get('categoryId'));
+    console.log('Affichage dans AFFICHAGE ID Cat', categoryIdFromUrl);
+    //GET ONE
+    this.categoryServ.getOne(categoryIdFromUrl).subscribe({
+      next: (responseId) => {
+        console.log('Data category loaded :', responseId);
+        this.category = responseId;
+      },
+      error: () => {},
+    });
 
+    // GET ALL CATEGORY
     this.categoryServ.getAllCat().subscribe((response) => {
       console.log(response);
       this.categoryDisplayed = [...response];
     });
 
-    this.questionServ.getAllQuestion().subscribe((response) => {
-      console.log(response);
-      this.questionDisplayed = [...response];
+    // GET ALL QUESTION BY CATEGORY
+    this.questionServ
+      .getByCategorie(categoryIdFromUrl)
+      .subscribe((response) => {
+        console.log(response);
+        this.questionDisplayed = [...response];
+      });
+
+    const cheminUrlQuest = this.route.snapshot.paramMap;
+    const questionIdFromUrl = Number(cheminUrlQuest.get('questionId'));
+    console.log('Affichage dans AFFICHAGE ID Quest', questionIdFromUrl);
+    this.questionServ.getOne(questionIdFromUrl).subscribe({
+      next: () => {
+        this.questionDisplayed = this.questionDisplayed.filter(
+          (x) => x.id !== questionIdFromUrl
+        );
+      },
     });
   }
-  submitForm() {
-    console.log(this.formCrea);
-    this.submitFormCategQuestion.emit(this.formCrea.value);
+
+  deleteQuestionButton(deletedQuestion: number) {
+    this.questionServ.deleteQuestion(deletedQuestion).subscribe({
+      next: () => {
+        this.questionDisplayed = this.questionDisplayed.filter(
+          (x) => x.id !== deletedQuestion
+        );
+      },
+    });
+    console.log('La Plante a été supprimée : ', deletedQuestion);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+  /// BOITE MODALE TYPE POPUP
+  ngAfterViewInit(): void {
+    this.dialog = document.querySelector('dialog');
+    this.dialogSupprConfirm = document.getElementById('dialogConfirm');
   }
+  dialog: any;
+  dialogSupprConfirm: any;
+
+  colorOk: string = '';
+  colorSuppr: string = "'red'";
+
+  ouvrirModal() {
+    this.dialog!.showModal();
+  }
+  closeModal() {
+    this.dialog!.close();
+  }
+
+  questionIdToDelete!: number;
+  confirmSuppr(id: number) {
+    this.questionIdToDelete = id;
+    this.dialogSupprConfirm!.showModal();
+  }
+  closeModalSuppr() {
+    this.dialogSupprConfirm!.close();
+  }
+
+  //// BOITE MODALE TYPE POPUP
 }
