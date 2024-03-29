@@ -20,7 +20,7 @@ export class ReponsesService {
   }
 
   getByQuestion(questionId: number): Observable<Reponse[]> {
-    return this.Http.get<Reponse[]>(`${this.urlApi}/${questionId}`);
+    return this.Http.get<Reponse[]>(`${this.urlApi}/reponse/${questionId}`);
   }
 
   createNewCategorie(reponseToCreate: Reponse): Observable<Reponse> {

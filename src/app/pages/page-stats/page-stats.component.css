@@ -9,9 +9,7 @@ h1 {
 }
 
 #bottomRightButton {
-    border: none;
     text-align: right;
-    border-radius: 5%;
     background-color: #e0f2b7;
     font-size: 20px;
     margin-left: 22rem;
@@ -25,8 +23,6 @@ h1 {
 
 #bottomCenterButton {
     margin-left: 30rem;
-    border: none;
-    border-radius: 2%;
     background-color: #e0f2b7;
     font-size: 25px;
     width: 20rem;

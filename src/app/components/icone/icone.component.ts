@@ -16,6 +16,8 @@ export class IconeComponent {
     | 'pencil-square'
     | 'balloon-heart'
     | 'check2-square'
+    | 'check-lg'
+    | 'x-circle'
     | 'pencil' = 'pencil';
 
   @Input() iconSize: number = 2;
