@@ -14,6 +14,7 @@ import { CategoriesService } from 'src/app/services/categories.service';
 export class FormQuestionReponseComponent implements OnInit {
   formQuestionReponse!: FormGroup;
   lesReponses: any[] = [];
+  selected!: number;
 
   constructor(
     private categoriesService: CategoriesService,
@@ -35,9 +36,9 @@ export class FormQuestionReponseComponent implements OnInit {
         next: (cDedan) => {
           this.categorieId = cDedan;
           console.log('c dedan est', cDedan);
-          console.log("id de ma cat?", this.categorieId);
+          console.log('id de ma cat?', this.categorieId);
         },
-        error: () => {},
+        error: () => {},    
       });
   }
 
@@ -51,39 +52,47 @@ export class FormQuestionReponseComponent implements OnInit {
       reponse2: new FormControl(this.formQuestionReponse, Validators.required),
       reponse3: new FormControl(this.formQuestionReponse, Validators.required),
       reponse4: new FormControl(this.formQuestionReponse, Validators.required),
+      reponseCorrecte: new FormControl(this.selected),
+      
     });
   }
 
   onSubmitQuestionReponse() {
+    const newQuestion = {
+      reponses: [
+        {
+          libelle: this.formQuestionReponse.value.reponse1,
+          isCorrect: false,
+        },
+        {
+          libelle: this.formQuestionReponse.value.reponse2,
+          isCorrect: false,
+        },
+        {
+          libelle: this.formQuestionReponse.value.reponse3,
+          isCorrect: false,
+        },
+        {
+          libelle: this.formQuestionReponse.value.reponse4,
+          isCorrect: false,
+        },
+      ],
+      libelleQuestion: this.formQuestionReponse.value.libelleQuestion,
+      categorieId: this.categorieId.id,
+      categorie: this.categorieId.libelle,
+    };
 
-     const newQuestion = {
-       reponses: [
-         {
-           libelle: this.formQuestionReponse.value.reponse1,
-           isCorrect: true,
-         },
-         {
-           libelle: this.formQuestionReponse.value.reponse2,
-           isCorrect: false,
-         },
-         {
-           libelle: this.formQuestionReponse.value.reponse3,
-           isCorrect: false,
-         },
-         {
-           libelle: this.formQuestionReponse.value.reponse4,
-           isCorrect: false,
-         },
-       ],
-       libelleQuestion: this.formQuestionReponse.value.libelleQuestion,
-       categorieId: this.categorieId.id,
-       categorie: this.categorieId.libelle,
-     };
+    for (let index = 0; index < newQuestion.reponses.length; index++) {
 
-     console.log(newQuestion);
-     
+      if(index == this.formQuestionReponse.value.reponseCorrecte){
+        newQuestion.reponses[index].isCorrect = true;
+      }
+    }
+
+    console.log("c'est new q°", newQuestion);
+
     // const envoieQuestion = this.formQuestionReponse.value.libelleQuestion;
-    this.lesReponses.push(newQuestion);       
+    this.lesReponses.push(newQuestion);
     // const envoieReponse1 = this.formQuestionReponse.value.reponse1;
     // this.lesReponses.push(envoieReponse1);
     // const envoieReponse2 = this.formQuestionReponse.value.reponse2;
@@ -92,7 +101,7 @@ export class FormQuestionReponseComponent implements OnInit {
     // this.lesReponses.push(envoieReponse3);
     // const envoieReponse4 = this.formQuestionReponse.value.reponse4;
     // this.lesReponses.push(envoieReponse4);
-  
+
     this.submitFormQuestionReponse.emit(newQuestion);
     // console.log("la question", envoieQuestion);
     // this.submitFormQuestionReponse.emit(envoieReponse1);
@@ -110,3 +119,32 @@ export class FormQuestionReponseComponent implements OnInit {
 //     console.log('ça marche', this.formQuestionReponse.value);
 //   }
 
+
+
+// selectionnerCarCorrecte(event: any, reponseName: string) {
+//     const isCorrect = event.target.checked; // Vérifie si l'option a été sélectionnée
+//     switch (reponseName) {
+//       case 'reponse1':
+//         this.formQuestionReponse.patchValue({
+//           reponse1: { isCorrect: isCorrect },
+//         });
+//         break;
+//       case 'reponse2':
+//         this.formQuestionReponse.patchValue({
+//           reponse2: { isCorrect: isCorrect },
+//         });
+//         break;
+//       case 'reponse3':
+//         this.formQuestionReponse.patchValue({
+//           reponse3: { isCorrect: isCorrect },
+//         });
+//         break;
+//       case 'reponse4':
+//         this.formQuestionReponse.patchValue({
+//           reponse4: { isCorrect: isCorrect },
+//         });
+//         break;
+//       default:
+//         break;
+//     }
+//   }
