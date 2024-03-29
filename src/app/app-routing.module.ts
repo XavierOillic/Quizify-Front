@@ -24,8 +24,8 @@ const routes: Routes = [
     component: PageCreateQuestionComponent,
   }, ///:categorieId
   { path: 'quiz', component: PageQuizComponent },
-  { path: 'quiz/5', component: PageGameComponent },
-  { path: 'quiz/5/results', component: PageResultsComponent },
+  { path: 'quiz/:id', component: PageGameComponent },
+  { path: 'quiz/:id/results', component: PageResultsComponent },
   { path: 'stats', component: PageStatsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

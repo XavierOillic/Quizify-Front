@@ -1,21 +1,71 @@
 <div class="vert">
   <div class="container text-center">
     <h1 class="pt-3 mb-5 test">
-      Résultats de mon Quiz <span class="text-success">{{ theme }}</span>
+      Résultats de mon Quiz :
+      <span *ngIf="theme" class="text-success">{{ theme.libelle }}</span>
     </h1>
-    <div class="row d-flex align-items-center">
-      <div class="col bg-secondary-subtle">
-        <h5>question 1</h5>
-        <p>réponse bonne</p>
-        <h5>question 2</h5>
-        <p>réponse bonne</p>
-        <h5>question 3</h5>
-        <p>sa réponse mauvaise</p>
-        <p>la bonne réponse</p>
+    <div class="row d-flex align-items-center" *ngIf="question3">
+      <div class="col bg-secondary-subtle p-3 rounded">
+        <h5>{{ question1.libelleQuestion }}</h5>
+        <div class="d-flex align-items-center justify-content-center">
+          <p class="m-0 me-3">{{ reponse1.libelleReponse }}</p>
+          <span *ngIf="reponse1.isCorrect">
+            <app-icone
+              [iconName]="'check-lg'"
+              [iconColor]="'green'"
+              [iconSize]="2"
+            ></app-icone></span
+          ><span *ngIf="!reponse1.isCorrect"
+            ><app-icone
+              [iconName]="'x-circle'"
+              [iconColor]="'red'"
+              [iconSize]="2"
+            ></app-icone
+          ></span>
+        </div>
+        <h5>{{ question2.libelleQuestion }}</h5>
+        <div class="d-flex align-items-center justify-content-center">
+          <p class="m-0 me-3">{{ reponse2.libelleReponse }}</p>
+          <span *ngIf="reponse2.isCorrect"
+            ><app-icone
+              [iconName]="'check-lg'"
+              [iconColor]="'green'"
+              [iconSize]="2"
+            ></app-icone></span
+          ><span *ngIf="!reponse2.isCorrect"
+            ><app-icone
+              [iconName]="'x-circle'"
+              [iconColor]="'red'"
+              [iconSize]="2"
+            ></app-icone
+          ></span>
+        </div>
+        <h5>{{ question3.libelleQuestion }}</h5>
+        <div class="d-flex align-items-center justify-content-center">
+          <p class="m-0 me-3">{{ reponse3.libelleReponse }}</p>
+          <span *ngIf="reponse3.isCorrect"
+            ><app-icone
+              [iconName]="'check-lg'"
+              [iconColor]="'green'"
+              [iconSize]="2"
+            ></app-icone></span
+          ><span *ngIf="!reponse3.isCorrect"
+            ><app-icone
+              [iconName]="'x-circle'"
+              [iconColor]="'red'"
+              [iconSize]="2"
+            ></app-icone
+          ></span>
+        </div>
       </div>
       <div class="col">
-        <p>Bravo !</p>
-        <p>2 réponses sur 3 !</p>
+        <p>
+          <span *ngIf="goodAnswers >= 2">Bravo !</span
+          ><span *ngIf="goodAnswers < 2"
+            >Une mauvaise réponse est source d'apprentissage !</span
+          >
+        </p>
+        <p>{{ goodAnswers }} réponses sur 3 !</p>
         <img src="" alt="trophee" />
       </div>
     </div>

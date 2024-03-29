@@ -19,6 +19,10 @@ export class ReponsesService {
     return this.Http.get<Reponse>(`${this.urlApi}/${reponseId}`);
   }
 
+  getByQuestion(questionId: number): Observable<Reponse[]> {
+    return this.Http.get<Reponse[]>(`${this.urlApi}/reponse/${questionId}`);
+  }
+
   createNewCategorie(reponseToCreate: Reponse): Observable<Reponse> {
     return this.Http.post<Reponse>(this.urlApi, reponseToCreate);
   }
