@@ -48,12 +48,11 @@ export class QuestionsService {
     return this.Http.delete<Question>(`${this.urlApi}/${questionId}`);
   }
 
-  createNewQuestionWithReponse(
-    questionToCreate: Question,
-    categorieId: number
+  createNewQuestionWithReponse(//simplification de l'appel de la methode pour aviter d'ajouter ld'id dans l'url
+    questionToCreate: Question
   ): Observable<Question> {
     return this.Http.post<Question>(
-      'http://localhost:8080/question/${categorieId}',
+      `http://localhost:8080/question`,
       questionToCreate
     );
   }
