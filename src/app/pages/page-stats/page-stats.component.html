@@ -7,7 +7,11 @@
                 [numberOfCategories]="numberOfCategories" [numberOfQuestions]="numberOfQuestions"></app-post-stats>
             <app-post-stats class="one-stat" *ngFor="let statsData of statToDisplay"
                 [stats]="statsData"></app-post-stats>
+            <app-post-stats class="one-stat" *ngIf="games" [games]="games"></app-post-stats>
 
-            <button id="bottomCenterButton">Réinitialiser</button>
-            <button id="bottomRightButton">Voir plus</button>
+
+
+            <button class="border border-primary-subtle rounded-1" id="bottomCenterButton"
+                (click)="clearData()">Réinitialiser</button>
+            <button class="border border-primary-subtle rounded-1" id="bottomRightButton">Voir plus</button>
         </div>
